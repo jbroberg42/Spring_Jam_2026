@@ -194,7 +194,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3bwfg")
 }],
-"loop": true,
+"loop": false,
 "name": &"Resurection",
 "speed": 12.0
 }]
@@ -202,8 +202,6 @@ animations = [{
 [node name="Carrot" type="AnimatedSprite2D" unique_id=340667236]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_shfyt")
-animation = &"Resurection"
+animation = &"Melt"
 autoplay = "Melt"
-frame = 2
-frame_progress = 0.31428525
 script = ExtResource("1_btq7l")

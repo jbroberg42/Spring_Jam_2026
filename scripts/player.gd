@@ -2,6 +2,7 @@ extends CharacterBody2D
 @onready var anim = $AnimatedSprite2D
 
 
+
 const SPEED = 100.0
 const JUMP_VELOCITY = -300.0
 
@@ -18,8 +19,8 @@ func _physics_process(delta):
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		
 		velocity.y = JUMP_VELOCITY
+		$AnimatedSprite2D.play("jump")
 
 		
 
@@ -28,7 +29,13 @@ func _physics_process(delta):
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * SPEED
+		if is_on_floor() && velocity.y == 0:
+			$AnimatedSprite2D.play("walk")
+			#flip the animation to the right or left
+			$AnimatedSprite2D.flip_h = direction < 0
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		if $AnimatedSprite2D.animation == "walk":
+			$AnimatedSprite2D.stop()
 
 	move_and_slide()

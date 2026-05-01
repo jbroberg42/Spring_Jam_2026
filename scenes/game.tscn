@@ -4,9 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://bflfmbf1mjjk7" path="res://assets/sprites/world_tileset.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://qelv3jvh7pi5" path="res://scenes/platform.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bc264htw0afth" path="res://scenes/coin.tscn" id="4_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://cdsksi2n4eyfj" path="res://scenes/wicked.tscn" id="5_iywne"]
-[ext_resource type="PackedScene" uid="uid://cdla4ro8ecejr" path="res://scenes/mc_guy.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://cdsksi2n4eyfj" path="res://scenes/killzone.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://cdla4ro8ecejr" path="res://scenes/snowman.tscn" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://b2haeh0vpbkww" path="res://scenes/sky.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://c5jjj8b5b62c5" path="res://scenes/hud.tscn" id="8_gee14"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -275,10 +276,10 @@ limit_bottom = 122
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="WICKED" parent="." unique_id=300587 instance=ExtResource("5_iywne")]
+[node name="killzone" parent="." unique_id=300587 instance=ExtResource("5_iywne")]
 position = Vector2(23, 59)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WICKED" unique_id=259522311]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=259522311]
 position = Vector2(165, 40)
 shape = SubResource("WorldBoundaryShape2D_p57ef")
 
@@ -315,8 +316,10 @@ position = Vector2(486, -59)
 libraries/ = SubResource("AnimationLibrary_u5sy4")
 autoplay = &"Move"
 
-[node name="McGuy" parent="." unique_id=1341636080 instance=ExtResource("6_p57ef")]
+[node name="Snowman" parent="." unique_id=1341636080 instance=ExtResource("6_p57ef")]
 position = Vector2(152, -6)
 
 [node name="Sky" parent="." unique_id=1797930561 instance=ExtResource("7_u5sy4")]
 position = Vector2(-167, 17)
+
+[node name="HUD" parent="." unique_id=244711438 instance=ExtResource("8_gee14")]

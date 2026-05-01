@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c5jjj8b5b62c5"]
+
+[node name="HUD" type="CanvasLayer" unique_id=244711438]
+follow_viewport_enabled = true
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=387233266]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "0"
