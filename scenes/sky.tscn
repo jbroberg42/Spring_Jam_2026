@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://b2haeh0vpbkww"]
+
+[ext_resource type="Material" uid="uid://dds341n6su68e" path="res://assets/shaders/fog_fade_material.tres" id="1_k1tqj"]
+
+[sub_resource type="Gradient" id="Gradient_p57ef"]
+interpolation_mode = 2
+colors = PackedColorArray(0.9838329, 0.6410024, 0, 0, 0.99999994, 0.94551677, 0.8506257, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_u5sy4"]
+frequency = 0.0053
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qk45w"]
+noise = SubResource("FastNoiseLite_u5sy4")
+color_ramp = SubResource("Gradient_p57ef")
+seamless = true
+seamless_blend_skirt = 0.382
+
+[sub_resource type="Gradient" id="Gradient_gee14"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 0.8332386, 0.6352719, 0, 0.99999994, 0.61465305, 0.009128286, 0.62352943)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0tnpc"]
+seed = 1
+frequency = 0.0228
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3hy4n"]
+noise = SubResource("FastNoiseLite_0tnpc")
+color_ramp = SubResource("Gradient_gee14")
+seamless = true
+seamless_blend_skirt = 0.382
+
+[sub_resource type="Gradient" id="Gradient_u5sy4"]
+offsets = PackedFloat32Array(0, 0.18992248, 1)
+colors = PackedColorArray(0.0010427046, 0.2865209, 0.9486757, 1, 0, 0.46601117, 0.9458347, 1, 0.6012984, 0.8632337, 0.99999994, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v26od"]
+gradient = SubResource("Gradient_u5sy4")
+width = 512
+height = 512
+fill_to = Vector2(0, 1)
+
+[node name="Sky" type="Node2D" unique_id=1797930561]
+
+[node name="FogParallax2D" type="Parallax2D" parent="." unique_id=1160619428]
+scroll_scale = Vector2(1.5, 1)
+repeat_size = Vector2(512, 0)
+autoscroll = Vector2(-20, 0)
+repeat_times = 3
+
+[node name="Fog" type="Sprite2D" parent="FogParallax2D" unique_id=936195916]
+z_index = 6
+material = ExtResource("1_k1tqj")
+position = Vector2(662, -81)
+texture = SubResource("NoiseTexture2D_qk45w")
+
+[node name="FogParallax2D2" type="Parallax2D" parent="." unique_id=1000721829]
+scroll_scale = Vector2(1.5, 1)
+repeat_size = Vector2(512, 0)
+autoscroll = Vector2(-25, 0)
+repeat_times = 3
+
+[node name="Fog" type="Sprite2D" parent="FogParallax2D2" unique_id=770450581]
+z_index = 6
+material = ExtResource("1_k1tqj")
+position = Vector2(662, -15.27)
+texture = SubResource("NoiseTexture2D_3hy4n")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=801072668]
+z_index = -1
+scroll_scale = Vector2(0, 1)
+scroll_offset = Vector2(7, -31)
+
+[node name="Sky" type="Sprite2D" parent="Parallax2D" unique_id=1544608370]
+position = Vector2(659, -76)
+texture = SubResource("GradientTexture2D_v26od")

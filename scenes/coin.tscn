@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bc264htw0afth"]
+
+[ext_resource type="Script" uid="uid://cy25jwqpg8xwo" path="res://scripts/coin.gd" id="1_i64fm"]
+[ext_resource type="Texture2D" uid="uid://ddxr40vp0wxr0" path="res://assets/sprites/CoinSheet.png" id="1_rwqht"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i64fm"]
+atlas = ExtResource("1_rwqht")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11l1o"]
+atlas = ExtResource("1_rwqht")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d14el"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i64fm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11l1o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ikuy"]
+radius = 5.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i64fm"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, 0.53, 0)
+emission_shape_scale = Vector3(4, 6, 1)
+emission_shape = 1
+emission_sphere_radius = 1.0
+inherit_velocity_ratio = 0.137
+direction = Vector3(1, -10, 0)
+spread = 180.0
+initial_velocity_min = 36.04
+initial_velocity_max = 171.17
+gravity = Vector3(0, 0, 0)
+
+[node name="Coin" type="Area2D" unique_id=1759638673]
+collision_mask = 2
+script = ExtResource("1_i64fm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2141434051]
+sprite_frames = SubResource("SpriteFrames_d14el")
+autoplay = "default"
+frame_progress = 0.34430867
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=26761935]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_1ikuy")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=35681786]
+position = Vector2(0, -2)
+amount = 5
+amount_ratio = 0.01
+lifetime = 0.060000000000000005
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_i64fm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
