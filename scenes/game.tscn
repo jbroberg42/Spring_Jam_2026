@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cdsksi2n4eyfj" path="res://scenes/killzone.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://cdla4ro8ecejr" path="res://scenes/snowman.tscn" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://b2haeh0vpbkww" path="res://scenes/sky.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://c5jjj8b5b62c5" path="res://scenes/hud.tscn" id="8_gee14"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -320,3 +321,5 @@ position = Vector2(152, -6)
 
 [node name="Sky" parent="." unique_id=1797930561 instance=ExtResource("7_u5sy4")]
 position = Vector2(-167, 17)
+
+[node name="HUD" parent="." unique_id=244711438 instance=ExtResource("8_gee14")]
