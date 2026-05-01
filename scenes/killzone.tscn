@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cdsksi2n4eyfj"]
 
-[ext_resource type="Script" uid="uid://ba8g7ph33bhmv" path="res://scripts/wicked.gd" id="1_hi5es"]
+[ext_resource type="Script" uid="uid://ba8g7ph33bhmv" path="res://scripts/killzone.gd" id="1_hi5es"]
 
 [node name="WICKED" type="Area2D" unique_id=300587]
 collision_mask = 2
