@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://brsw35h7doxjk"]
+
+[ext_resource type="Texture2D" uid="uid://ddxr40vp0wxr0" path="res://assets/sprites/CoinSheet.png" id="1_bak1h"]
+[ext_resource type="FontFile" uid="uid://dv1g40pgvhvrs" path="res://assets/fonts/PixelOperator8.ttf" id="2_plgac"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bak1h"]
+atlas = ExtResource("1_bak1h")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plgac"]
+atlas = ExtResource("1_bak1h")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lew60"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bak1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plgac")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Score" type="Control" unique_id=1416161994]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=973389476]
+layout_mode = 0
+offset_left = 32.0
+offset_top = -27.0
+offset_right = 76.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("2_plgac")
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1864018411]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_lew60")

@@ -170,7 +170,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qlg0r"]
-size = Vector2(27, 17)
+size = Vector2(16, 14)
 
 [node name="Player" type="CharacterBody2D" unique_id=1867319898]
 z_index = 5
@@ -184,6 +184,6 @@ animation = &"idle"
 autoplay = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=982389133]
-position = Vector2(-1.4999998, -12.5)
+position = Vector2(-2, -7)
 rotation = -1.5707964
 shape = SubResource("RectangleShape2D_qlg0r")
