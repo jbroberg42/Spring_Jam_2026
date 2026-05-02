@@ -48,7 +48,6 @@ offset_right = 76.0
 offset_bottom = 29.0
 theme_override_fonts/font = ExtResource("1_p7gpi")
 theme_override_font_sizes/font_size = 50
-text = "0"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=914260679]
 scale = Vector2(2, 2)
