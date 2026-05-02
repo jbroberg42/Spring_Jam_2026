@@ -8,8 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bc264htw0afth" path="res://scenes/coin.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://cdsksi2n4eyfj" path="res://scenes/killzone.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://cdla4ro8ecejr" path="res://scenes/snowman.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://colt1wcbh05xx" path="res://scenes/flower.tscn" id="7_dinhu"]
 [ext_resource type="PackedScene" uid="uid://b2haeh0vpbkww" path="res://scenes/sky.tscn" id="7_u5sy4"]
-[ext_resource type="PackedScene" uid="uid://brsw35h7doxjk" path="res://scenes/score.tscn" id="10_vtaks"]
+[ext_resource type="PackedScene" path="res://scenes/score.tscn" id="10_vtaks"]
 [ext_resource type="PackedScene" uid="uid://dqmtby6fooixc" path="res://scenes/season_controller.tscn" id="11_kvpfn"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
@@ -337,6 +338,9 @@ autoplay = &"Move"
 [node name="Snowman" parent="." unique_id=1341636080 instance=ExtResource("6_p57ef")]
 position = Vector2(152, -6)
 
+[node name="Flower" parent="." unique_id=516543460 instance=ExtResource("7_dinhu")]
+position = Vector2(-56, -33)
+
 [node name="Sky" parent="." unique_id=1797930561 instance=ExtResource("7_u5sy4")]
 position = Vector2(-167, 17)
 
@@ -377,8 +381,3 @@ tile_set = SubResource("TileSet_lbhrr")
 [node name="Layer2" type="TileMapLayer" parent="." unique_id=1396506255]
 use_parent_material = true
 tile_set = SubResource("TileSet_lbhrr")
-
-[connection signal="spring" from="GameManager" to="Snowman" method="_on_game_manager_spring"]
-[connection signal="spring" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_spring"]
-[connection signal="winter" from="GameManager" to="Snowman" method="_on_game_manager_winter"]
-[connection signal="winter" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_winter"]
