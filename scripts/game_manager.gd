@@ -9,6 +9,9 @@ func add_score(amount: int):
 	GameState.score += amount
 	score.text = str(GameState.score)
 	
+func load_next_level():
+	get_tree().change_scene_to_file(GameState.level_list[GameState.level + 1])
+	
 func switch_seasons():
 	GameState.is_winter = !GameState.is_winter
 	if GameState.is_winter:

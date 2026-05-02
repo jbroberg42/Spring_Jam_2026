@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b2nwmnujtsats"]
+
+[ext_resource type="Script" uid="uid://ppdvwm8dpm67" path="res://scenes/macguffin.gd" id="1_nfo6c"]
+[ext_resource type="Texture2D" uid="uid://dvl42vwwc6pdq" path="res://icon.svg" id="2_odbxc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvuet"]
+size = Vector2(8, 7)
+
+[node name="macguffin" type="Area2D" unique_id=1541742947]
+collision_mask = 2
+script = ExtResource("1_nfo6c")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1604170270]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_odbxc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=701892352]
+scale = Vector2(3.0902138, 3.0902138)
+shape = SubResource("RectangleShape2D_kvuet")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

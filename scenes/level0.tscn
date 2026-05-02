@@ -1,0 +1,206 @@
+[gd_scene format=4 uid="uid://dace6iugog45x"]
+
+[ext_resource type="PackedScene" uid="uid://cgphpsr53so7u" path="res://scenes/game_manager.tscn" id="1_pil2j"]
+[ext_resource type="Texture2D" uid="uid://bi5q7fbi771my" path="res://assets/sprites/BackgroundTiles.png" id="2_k5ein"]
+[ext_resource type="PackedScene" uid="uid://cayewvh386mlo" path="res://scenes/player.tscn" id="3_psh0x"]
+[ext_resource type="Script" uid="uid://c64pbx7p3khmn" path="res://tile_map_layer.gd" id="3_wrnl3"]
+[ext_resource type="PackedScene" uid="uid://cdsksi2n4eyfj" path="res://scenes/killzone.tscn" id="4_ac0cw"]
+[ext_resource type="PackedScene" uid="uid://brsw35h7doxjk" path="res://scenes/score.tscn" id="5_wbr6d"]
+[ext_resource type="PackedScene" uid="uid://dqmtby6fooixc" path="res://scenes/season_controller.tscn" id="6_2uuj8"]
+[ext_resource type="PackedScene" uid="uid://cdla4ro8ecejr" path="res://scenes/snowman.tscn" id="8_6xkrd"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gklfi"]
+texture = ExtResource("2_k5ein")
+texture_region_size = Vector2i(32, 32)
+21:8/animation_columns = 2
+21:8/animation_separation = Vector2i(8, 0)
+21:8/animation_frame_0/duration = 1.0
+21:8/animation_frame_1/duration = 1.0
+21:8/0 = 0
+22:8/animation_columns = 2
+22:8/animation_separation = Vector2i(8, 0)
+22:8/animation_frame_0/duration = 1.0
+22:8/animation_frame_1/duration = 1.0
+22:8/0 = 0
+22:9/animation_columns = 2
+22:9/animation_separation = Vector2i(8, 0)
+22:9/animation_frame_0/duration = 1.0
+22:9/animation_frame_1/duration = 1.0
+22:9/0 = 0
+23:9/animation_columns = 2
+23:9/animation_separation = Vector2i(8, 0)
+23:9/animation_frame_0/duration = 1.0
+23:9/animation_frame_1/duration = 1.0
+23:9/0 = 0
+22:10/animation_columns = 2
+22:10/animation_separation = Vector2i(8, 0)
+22:10/animation_frame_0/duration = 1.0
+22:10/animation_frame_1/duration = 1.0
+22:10/0 = 0
+22:11/animation_columns = 2
+22:11/animation_separation = Vector2i(8, 0)
+22:11/animation_frame_0/duration = 1.0
+22:11/animation_frame_1/duration = 1.0
+22:11/0 = 0
+22:12/animation_columns = 2
+22:12/animation_separation = Vector2i(8, 0)
+22:12/animation_frame_0/duration = 1.0
+22:12/animation_frame_1/duration = 1.0
+22:12/0 = 0
+22:13/animation_columns = 2
+22:13/animation_separation = Vector2i(8, 0)
+22:13/animation_frame_0/duration = 1.0
+22:13/animation_frame_1/duration = 1.0
+22:13/0 = 0
+22:14/next_alternative_id = 2
+22:14/animation_columns = 2
+22:14/animation_separation = Vector2i(8, 0)
+22:14/animation_frame_0/duration = 1.0
+22:14/animation_frame_1/duration = 1.0
+22:14/0 = 0
+22:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+21:14/animation_columns = 2
+21:14/animation_separation = Vector2i(8, 0)
+21:14/animation_frame_0/duration = 1.0
+21:14/animation_frame_1/duration = 1.0
+21:14/0 = 0
+21:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+23:14/animation_columns = 2
+23:14/animation_separation = Vector2i(8, 0)
+23:14/animation_frame_0/duration = 1.0
+23:14/animation_frame_1/duration = 1.0
+23:14/0 = 0
+23:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+23:15/animation_columns = 2
+23:15/animation_separation = Vector2i(8, 0)
+23:15/animation_frame_0/duration = 1.0
+23:15/animation_frame_1/duration = 1.0
+23:15/0 = 0
+23:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+22:15/animation_columns = 2
+22:15/animation_separation = Vector2i(8, 0)
+22:15/animation_frame_0/duration = 1.0
+22:15/animation_frame_1/duration = 1.0
+22:15/0 = 0
+22:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+21:15/animation_columns = 2
+21:15/animation_separation = Vector2i(8, 0)
+21:15/animation_frame_0/duration = 1.0
+21:15/animation_frame_1/duration = 1.0
+21:15/0 = 0
+21:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+21:16/animation_columns = 2
+21:16/animation_separation = Vector2i(8, 0)
+21:16/animation_frame_0/duration = 1.0
+21:16/animation_frame_1/duration = 1.0
+21:16/0 = 0
+21:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+20:16/animation_columns = 2
+20:16/animation_separation = Vector2i(8, 0)
+20:16/animation_frame_0/duration = 1.0
+20:16/animation_frame_1/duration = 1.0
+20:16/0 = 0
+20:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+23:16/animation_columns = 2
+23:16/animation_separation = Vector2i(8, 0)
+23:16/animation_frame_0/duration = 1.0
+23:16/animation_frame_1/duration = 1.0
+23:16/0 = 0
+23:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+24:16/animation_columns = 2
+24:16/animation_separation = Vector2i(8, 0)
+24:16/animation_frame_0/duration = 1.0
+24:16/animation_frame_1/duration = 1.0
+24:16/0 = 0
+24:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+25:16/animation_columns = 2
+25:16/animation_separation = Vector2i(8, 0)
+25:16/animation_frame_0/duration = 1.0
+25:16/animation_frame_1/duration = 1.0
+25:16/0 = 0
+25:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+26:16/animation_columns = 2
+26:16/animation_separation = Vector2i(8, 0)
+26:16/animation_frame_0/duration = 1.0
+26:16/animation_frame_1/duration = 1.0
+26:16/0 = 0
+26:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+25:15/animation_columns = 2
+25:15/animation_separation = Vector2i(8, 0)
+25:15/animation_frame_0/duration = 1.0
+25:15/animation_frame_1/duration = 1.0
+25:15/0 = 0
+25:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+25:14/animation_columns = 2
+25:14/animation_separation = Vector2i(8, 0)
+25:14/animation_frame_0/duration = 1.0
+25:14/animation_frame_1/duration = 1.0
+25:14/0 = 0
+25:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_cm1v6"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_gklfi")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
+distance = -2.0
+
+[node name="level0" type="Node2D" unique_id=874965567]
+
+[node name="GameManager" parent="." unique_id=1990519776 instance=ExtResource("1_pil2j")]
+unique_name_in_owner = true
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=257241976]
+tile_map_data = PackedByteArray("AAABAAEAAQAWAA4AAAADAAEAAQAWAA4AAAD//wEAAQAWAA4AAAD9////AQAXAA4AAAD8////AQAWAA4AAAAAAAEAAQAWAA4AAAACAAEAAQAWAA4AAAD+/wEAAQAaABAAAAD9/wEAAQAXABAAAAD9/wAAAQAXAA8AAAD8/wAAAQAWAA8AAAD7/wEAAQAWAA8AAAD8/wEAAQAWAA8AAAD7/wAAAQAWAA8AAAD6/wAAAQAWAA8AAAD6/wEAAQAWAA8AAAD6////AQAVAA4AAAD7////AQAWAA4AAAD//wAAAQAWAA0AAAD///7/AQAWAAsAAAD/////AQAWAAwAAAA=")
+tile_set = SubResource("TileSet_cm1v6")
+script = ExtResource("3_wrnl3")
+
+[node name="Player" parent="." unique_id=1867319898 instance=ExtResource("3_psh0x")]
+position = Vector2(24, -7)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=220398274]
+position = Vector2(0, -5)
+zoom = Vector2(4, 4)
+limit_left = -9999946
+limit_top = -9999998
+limit_right = 10000054
+limit_bottom = 122
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="killzone" parent="." unique_id=300587 instance=ExtResource("4_ac0cw")]
+position = Vector2(23, 59)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=259522311]
+position = Vector2(165, 40)
+shape = SubResource("WorldBoundaryShape2D_p57ef")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1081156825]
+
+[node name="Control" type="Control" parent="HUD" unique_id=918203041]
+layout_mode = 3
+anchor_left = 0.05
+anchor_top = 0.1
+anchor_right = 0.068
+anchor_bottom = 0.107
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Control" unique_id=1374680731]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 60
+
+[node name="Score" parent="HUD/Control/VBoxContainer" unique_id=1416161994 instance=ExtResource("5_wbr6d")]
+layout_mode = 2
+
+[node name="Season_controller" parent="HUD/Control/VBoxContainer" unique_id=2054882766 instance=ExtResource("6_2uuj8")]
+layout_mode = 2
+
+[node name="Snowman" parent="." unique_id=1341636080 instance=ExtResource("8_6xkrd")]
+position = Vector2(-152, -38)
+
+[connection signal="spring" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_spring"]
+[connection signal="winter" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_winter"]
