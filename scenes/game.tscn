@@ -3,9 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://cayewvh386mlo" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://cgphpsr53so7u" path="res://scenes/game_manager.tscn" id="1_vtaks"]
 [ext_resource type="Texture2D" uid="uid://bi5q7fbi771my" path="res://assets/sprites/BackgroundTiles.png" id="3_vtaks"]
+[ext_resource type="PackedScene" uid="uid://bc264htw0afth" path="res://scenes/coin.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://cdsksi2n4eyfj" path="res://scenes/killzone.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://cdla4ro8ecejr" path="res://scenes/snowman.tscn" id="6_p57ef"]
-[ext_resource type="PackedScene" path="res://scenes/flower.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://colt1wcbh05xx" path="res://scenes/flower.tscn" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://brsw35h7doxjk" path="res://scenes/score.tscn" id="10_vtaks"]
 [ext_resource type="PackedScene" uid="uid://dqmtby6fooixc" path="res://scenes/season_controller.tscn" id="11_kvpfn"]
 
@@ -247,6 +248,27 @@ position = Vector2(-127, 58)
 
 [node name="Snowman5" parent="." unique_id=918249356 instance=ExtResource("6_p57ef")]
 position = Vector2(-87, -26)
+
+[node name="Coin" parent="." unique_id=1759638673 instance=ExtResource("4_lbhrr")]
+position = Vector2(68, -83)
+
+[node name="Coin2" parent="." unique_id=2091079003 instance=ExtResource("4_lbhrr")]
+position = Vector2(166, -104)
+
+[node name="Coin3" parent="." unique_id=1092755778 instance=ExtResource("4_lbhrr")]
+position = Vector2(255, -122)
+
+[node name="Coin4" parent="." unique_id=942889097 instance=ExtResource("4_lbhrr")]
+position = Vector2(-13, -66)
+
+[node name="Coin5" parent="." unique_id=1782075289 instance=ExtResource("4_lbhrr")]
+position = Vector2(345, -176)
+
+[node name="Coin6" parent="." unique_id=117632856 instance=ExtResource("4_lbhrr")]
+position = Vector2(413, -176)
+
+[node name="Coin7" parent="." unique_id=2109811958 instance=ExtResource("4_lbhrr")]
+position = Vector2(376, -176)
 
 [connection signal="spring" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_spring"]
 [connection signal="winter" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_winter"]

@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://dace6iugog45x"]
+
+[ext_resource type="PackedScene" uid="uid://cgphpsr53so7u" path="res://scenes/game_manager.tscn" id="1_pil2j"]
+[ext_resource type="PackedScene" uid="uid://cayewvh386mlo" path="res://scenes/player.tscn" id="3_psh0x"]
+[ext_resource type="PackedScene" uid="uid://cdsksi2n4eyfj" path="res://scenes/killzone.tscn" id="4_ac0cw"]
+[ext_resource type="PackedScene" uid="uid://brsw35h7doxjk" path="res://scenes/score.tscn" id="5_wbr6d"]
+[ext_resource type="PackedScene" uid="uid://dqmtby6fooixc" path="res://scenes/season_controller.tscn" id="6_2uuj8"]
+[ext_resource type="PackedScene" uid="uid://colt1wcbh05xx" path="res://scenes/flower.tscn" id="7_majxj"]
+[ext_resource type="PackedScene" uid="uid://cdla4ro8ecejr" path="res://scenes/snowman.tscn" id="8_6xkrd"]
+[ext_resource type="PackedScene" uid="uid://bc264htw0afth" path="res://scenes/coin.tscn" id="9_p3qcy"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
+distance = -2.0
+
+[node name="level0" type="Node2D" unique_id=874965567]
+
+[node name="GameManager" parent="." unique_id=1990519776 instance=ExtResource("1_pil2j")]
+unique_name_in_owner = true
+
+[node name="Player" parent="." unique_id=1867319898 instance=ExtResource("3_psh0x")]
+position = Vector2(24, -7)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=220398274]
+position = Vector2(0, -5)
+zoom = Vector2(4, 4)
+limit_left = -9999946
+limit_top = -9999998
+limit_right = 10000054
+limit_bottom = 122
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="killzone" parent="." unique_id=300587 instance=ExtResource("4_ac0cw")]
+position = Vector2(23, 59)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=259522311]
+position = Vector2(165, 40)
+shape = SubResource("WorldBoundaryShape2D_p57ef")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1081156825]
+
+[node name="Control" type="Control" parent="HUD" unique_id=918203041]
+layout_mode = 3
+anchor_left = 0.05
+anchor_top = 0.1
+anchor_right = 0.068
+anchor_bottom = 0.107
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Control" unique_id=1374680731]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 60
+
+[node name="Score" parent="HUD/Control/VBoxContainer" unique_id=1416161994 instance=ExtResource("5_wbr6d")]
+layout_mode = 2
+
+[node name="Season_controller" parent="HUD/Control/VBoxContainer" unique_id=2054882766 instance=ExtResource("6_2uuj8")]
+layout_mode = 2
+
+[node name="Flower" parent="." unique_id=516543460 instance=ExtResource("7_majxj")]
+position = Vector2(69, -78)
+
+[node name="Flower2" parent="." unique_id=1341667305 instance=ExtResource("7_majxj")]
+position = Vector2(166, -101)
+
+[node name="Flower3" parent="." unique_id=706793242 instance=ExtResource("7_majxj")]
+position = Vector2(254, -123)
+
+[node name="Snowman3" parent="." unique_id=874122437 instance=ExtResource("8_6xkrd")]
+position = Vector2(-54, 26)
+
+[node name="Snowman4" parent="." unique_id=1341636080 instance=ExtResource("8_6xkrd")]
+position = Vector2(-127, 58)
+
+[node name="Snowman5" parent="." unique_id=918249356 instance=ExtResource("8_6xkrd")]
+position = Vector2(-87, -26)
+
+[node name="Coin" parent="." unique_id=1759638673 instance=ExtResource("9_p3qcy")]
+position = Vector2(68, -83)
+
+[node name="Coin2" parent="." unique_id=2091079003 instance=ExtResource("9_p3qcy")]
+position = Vector2(166, -104)
+
+[node name="Coin3" parent="." unique_id=1092755778 instance=ExtResource("9_p3qcy")]
+position = Vector2(255, -122)
+
+[node name="Coin4" parent="." unique_id=942889097 instance=ExtResource("9_p3qcy")]
+position = Vector2(-13, -66)
+
+[node name="Coin5" parent="." unique_id=1782075289 instance=ExtResource("9_p3qcy")]
+position = Vector2(345, -176)
+
+[node name="Coin6" parent="." unique_id=117632856 instance=ExtResource("9_p3qcy")]
+position = Vector2(413, -176)
+
+[node name="Coin7" parent="." unique_id=2109811958 instance=ExtResource("9_p3qcy")]
+position = Vector2(376, -176)
+
+[connection signal="spring" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_spring"]
+[connection signal="winter" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_winter"]
