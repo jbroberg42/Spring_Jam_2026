@@ -369,3 +369,6 @@ theme_override_constants/separation = 50
 
 [node name="Score" parent="HUD/Control/VBoxContainer" unique_id=1416161994 instance=ExtResource("10_vtaks")]
 layout_mode = 2
+
+[connection signal="spring" from="GameManager" to="Snowman" method="_on_game_manager_spring"]
+[connection signal="winter" from="GameManager" to="Snowman" method="_on_game_manager_winter"]

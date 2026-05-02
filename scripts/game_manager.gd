@@ -2,9 +2,19 @@ extends Node
 
 @onready var score: Control = $"../HUD/Control/VBoxContainer/Score/Label"
 
+signal winter
+signal spring
+
 func add_score(amount: int):
 	GameState.score += amount
 	score.text = str(GameState.score)
+	
+func switch_seasons():
+	GameState.is_winter = !GameState.is_winter
+	if GameState.is_winter:
+		winter.emit()
+	else:
+		spring.emit()
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

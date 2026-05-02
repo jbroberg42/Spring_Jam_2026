@@ -1,10 +1,11 @@
 extends CharacterBody2D
 @onready var anim = $AnimatedSprite2D
+@onready var game_manager: Node = %GameManager
 
 
 
 const SPEED = 100.0
-const JUMP_VELOCITY = -300.0
+const JUMP_VELOCITY = -350.0
 
 
 func _physics_process(delta):
@@ -33,3 +34,7 @@ func _physics_process(delta):
 			$AnimatedSprite2D.play("idle")
 
 	move_and_slide()
+	
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("switch"):
+		game_manager.switch_seasons()

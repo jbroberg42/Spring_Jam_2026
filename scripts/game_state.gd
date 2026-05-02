@@ -13,3 +13,4 @@ func reset():
 	time_taken = 0
 	is_winter = true
 	have_ring = false
+	get_tree().reload_current_scene()
