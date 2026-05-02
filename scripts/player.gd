@@ -34,7 +34,8 @@ func _physics_process(delta):
 			$AnimatedSprite2D.play("idle")
 
 	move_and_slide()
-	
+
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("switch"):
+	if Input.is_action_just_pressed("switch") && GameState.ability_ready:
 		game_manager.switch_seasons()
+		

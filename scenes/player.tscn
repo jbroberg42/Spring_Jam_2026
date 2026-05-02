@@ -188,3 +188,6 @@ autoplay = "walk"
 position = Vector2(-2, -7)
 rotation = -1.5707964
 shape = SubResource("RectangleShape2D_qlg0r")
+
+[node name="CooldownTimer" type="Timer" parent="." unique_id=1200386413]
+wait_time = 5.0

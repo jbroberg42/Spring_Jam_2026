@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b2kltl7lh1xay"]
 
-[ext_resource type="Script" uid="uid://bdgd8y7l852ef" path="res://scripts/game_manager.gd" id="1_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://cayewvh386mlo" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://cgphpsr53so7u" path="res://scenes/game_manager.tscn" id="1_vtaks"]
 [ext_resource type="Texture2D" uid="uid://bflfmbf1mjjk7" path="res://assets/sprites/world_tileset.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://qelv3jvh7pi5" path="res://scenes/platform.tscn" id="3_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://bi5q7fbi771my" path="res://assets/sprites/BackgroundTiles.png" id="3_vtaks"]
@@ -277,9 +277,8 @@ _data = {
 
 [node name="Game" type="Node2D" unique_id=874965567]
 
-[node name="GameManager" type="Node" parent="." unique_id=469755576]
+[node name="GameManager" parent="." unique_id=1990519776 instance=ExtResource("1_vtaks")]
 unique_name_in_owner = true
-script = ExtResource("1_0tnpc")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=770994235]
 tile_set = SubResource("TileSet_lbhrr")

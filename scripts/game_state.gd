@@ -4,7 +4,10 @@ var score: int = 0
 var level: int = 1
 var time_taken: int = 0
 var is_winter: bool = true
-var season_cooldown: int = 5
+
+var ability_cooldown: int = 5
+var ability_ready: bool = true
+
 var have_ring: bool = false
 	
 func reset():
