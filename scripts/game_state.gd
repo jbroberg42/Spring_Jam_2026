@@ -1,7 +1,7 @@
 extends Node
 
 var score: int = 0
-var level: int = 1
+var level: int = 0
 var time_taken: int = 0
 var is_winter: bool = true
 
@@ -9,6 +9,11 @@ var ability_cooldown: int = 1
 var ability_ready: bool = true
 
 var have_ring: bool = false
+
+var level_list: Array[String] = [
+	"res://scenes/game.tscn",
+	"res://scenes/level0.tscn"
+	]
 	
 func reset():
 	score = 0

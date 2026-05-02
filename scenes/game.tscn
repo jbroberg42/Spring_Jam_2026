@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cdsksi2n4eyfj" path="res://scenes/killzone.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://cdla4ro8ecejr" path="res://scenes/snowman.tscn" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://colt1wcbh05xx" path="res://scenes/flower.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://b2nwmnujtsats" path="res://scenes/macguffin.tscn" id="10_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://brsw35h7doxjk" path="res://scenes/score.tscn" id="10_vtaks"]
 [ext_resource type="PackedScene" uid="uid://dqmtby6fooixc" path="res://scenes/season_controller.tscn" id="11_kvpfn"]
 
@@ -255,9 +256,6 @@ position = Vector2(-87, -26)
 [node name="Coin" parent="." unique_id=1759638673 instance=ExtResource("4_lbhrr")]
 position = Vector2(68, -83)
 
-[node name="GameManager2" parent="." unique_id=1825844322 instance=ExtResource("1_vtaks")]
-unique_name_in_owner = true
-
 [node name="Coin8" parent="." unique_id=609307312 instance=ExtResource("4_lbhrr")]
 position = Vector2(68, -83)
 
@@ -279,7 +277,7 @@ position = Vector2(413, -176)
 [node name="Coin7" parent="." unique_id=2109811958 instance=ExtResource("4_lbhrr")]
 position = Vector2(376, -176)
 
+[node name="macguffin" parent="." unique_id=1541742947 instance=ExtResource("10_kvpfn")]
+
 [connection signal="spring" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_spring"]
 [connection signal="winter" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_winter"]
-[connection signal="spring" from="GameManager2" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_spring"]
-[connection signal="winter" from="GameManager2" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_winter"]
