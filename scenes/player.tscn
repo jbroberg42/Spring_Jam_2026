@@ -189,5 +189,7 @@ position = Vector2(-2, -7)
 rotation = -1.5707964
 shape = SubResource("RectangleShape2D_qlg0r")
 
-[node name="CooldownTimer" type="Timer" parent="." unique_id=1200386413]
+[node name="cooldown_timer" type="Timer" parent="." unique_id=2133086299]
 wait_time = 5.0
+
+[connection signal="timeout" from="cooldown_timer" to="." method="_on_cooldown_timer_timeout"]
