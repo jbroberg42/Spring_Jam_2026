@@ -72,6 +72,10 @@ region = Rect2(480, 0, 32, 32)
 atlas = ExtResource("2_rqhtc")
 region = Rect2(512, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_agc10"]
+atlas = ExtResource("2_rqhtc")
+region = Rect2(0, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_sgss6"]
 animations = [{
 "frames": [{
@@ -129,6 +133,14 @@ animations = [{
 "loop": false,
 "name": &"attack",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agc10")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ra85c"]
@@ -136,14 +148,19 @@ radius = 3.0
 height = 24.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6or65"]
-size = Vector2(30, 4)
+size = Vector2(32, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_agc10"]
+size = Vector2(32, 4)
 
 [node name="Flower" type="Node2D" unique_id=516543460]
 script = ExtResource("1_agc10")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=929651759]
+z_index = 6
 sprite_frames = SubResource("SpriteFrames_sgss6")
-animation = &"attack"
+animation = &"idle"
+autoplay = "idle"
 
 [node name="killzone" parent="." unique_id=300587 instance=ExtResource("3_ym8cu")]
 
@@ -155,7 +172,27 @@ shape = SubResource("CapsuleShape2D_ra85c")
 collision_mask = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=26480638]
-position = Vector2(0, 14)
+position = Vector2(0, 13)
 shape = SubResource("RectangleShape2D_6or65")
 
+[node name="Timer" type="Timer" parent="Area2D" unique_id=1246150067]
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="Area2D" unique_id=1989709917]
+wait_time = 0.1
+one_shot = true
+
+[node name="Timer3" type="Timer" parent="Area2D" unique_id=1678746635]
+one_shot = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=448454796]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1173657379]
+position = Vector2(0, 14)
+shape = SubResource("RectangleShape2D_agc10")
+one_way_collision = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Area2D/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Area2D/Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Area2D/Timer3" to="." method="_on_timer_3_timeout"]

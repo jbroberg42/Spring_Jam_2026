@@ -4,7 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://cgphpsr53so7u" path="res://scenes/game_manager.tscn" id="1_vtaks"]
 [ext_resource type="Texture2D" uid="uid://bi5q7fbi771my" path="res://assets/sprites/BackgroundTiles.png" id="3_vtaks"]
 [ext_resource type="PackedScene" uid="uid://cdsksi2n4eyfj" path="res://scenes/killzone.tscn" id="5_iywne"]
-[ext_resource type="PackedScene" uid="uid://brsw35h7doxjk" path="res://scenes/score.tscn" id="10_vtaks"]
+[ext_resource type="PackedScene" uid="uid://colt1wcbh05xx" path="res://scenes/flower.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" path="res://scenes/score.tscn" id="10_vtaks"]
 [ext_resource type="PackedScene" uid="uid://dqmtby6fooixc" path="res://scenes/season_controller.tscn" id="11_kvpfn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
@@ -226,6 +227,15 @@ layout_mode = 2
 
 [node name="Season_controller" parent="HUD/Control/VBoxContainer" unique_id=2054882766 instance=ExtResource("11_kvpfn")]
 layout_mode = 2
+
+[node name="Flower" parent="." unique_id=516543460 instance=ExtResource("7_u5sy4")]
+position = Vector2(-117, 3)
+
+[node name="Flower2" parent="." unique_id=1341667305 instance=ExtResource("7_u5sy4")]
+position = Vector2(-250, -43)
+
+[node name="Flower3" parent="." unique_id=706793242 instance=ExtResource("7_u5sy4")]
+position = Vector2(-181, -18)
 
 [connection signal="spring" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_spring"]
 [connection signal="winter" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_winter"]
