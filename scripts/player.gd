@@ -35,7 +35,12 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+#check if player has switched, and check cooldown
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("switch") && GameState.ability_ready:
 		game_manager.switch_seasons()
-		
+		GameState.ability_ready = false
+		$cooldown_timer.start()
+
+func _on_cooldown_timer_timeout() -> void:
+	GameState.ability_ready = true

@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dqmtby6fooixc"]
+
+[ext_resource type="Script" uid="uid://duend23lnyeke" path="res://scenes/season_controller.gd" id="1_l7rt0"]
+[ext_resource type="FontFile" uid="uid://dv1g40pgvhvrs" path="res://assets/fonts/PixelOperator8.ttf" id="1_p7gpi"]
+[ext_resource type="Texture2D" uid="uid://5i6i5w306m32" path="res://assets/sprites/FlowerSnowflake.png" id="2_l7rt0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7gpi"]
+atlas = ExtResource("2_l7rt0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7rt0"]
+atlas = ExtResource("2_l7rt0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aj62e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7gpi")
+}],
+"loop": false,
+"name": &"spring",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7rt0")
+}],
+"loop": false,
+"name": &"winter",
+"speed": 5.0
+}]
+
+[node name="Season_controller" type="Control" unique_id=1416161994]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l7rt0")
+
+[node name="Label" type="Label" parent="." unique_id=973389476]
+layout_mode = 0
+offset_left = 35.0
+offset_top = -22.0
+offset_right = 79.0
+offset_bottom = 29.0
+theme_override_fonts/font = ExtResource("1_p7gpi")
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=914260679]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_aj62e")
+animation = &"spring"
+autoplay = "winter"
