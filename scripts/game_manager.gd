@@ -1,15 +1,14 @@
 extends Node
 
-var score = 0
+@onready var score: Control = $"../HUD/Control/VBoxContainer/Score/Label"
 
-func add_point():
-	score += 1
-
-
+func add_score(amount: int):
+	GameState.score += amount
+	score.text = str(GameState.score)
+	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
-
+	score.text = str(GameState.score)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
