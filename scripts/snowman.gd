@@ -15,20 +15,20 @@ func _ready():
 	is_carrot = false
 
 func _process(delta):
-	if Input.is_action_just_pressed("switch"):
+#	if Input.is_action_just_pressed("switch"):
 #		var instance = carrot.instantiate()
 #		instance.position = Vector2(position.x, position.y-10)
 #		add_sibling(instance)
 #		queue_free()
-		if !is_carrot:
-			is_carrot = !is_carrot
-			$killzone/CollisionShape2D.disabled = true
-			animated_sprite_2d.play("Melts")
-		else:
-			animated_sprite_2d.play("resurrects")
-			timer.start() #the timer below will trigger and turn the snowman hostile again
+		#if !is_carrot:
+			#is_carrot = !is_carrot
+			#$killzone/CollisionShape2D.disabled = true
+			#animated_sprite_2d.play("Melts")
+		#else:
+			#animated_sprite_2d.play("resurrects")
+			#timer.start() #the timer below will trigger and turn the snowman hostile again
 		
-		
+	#move side to side, not off cliff
 	if !is_carrot:
 		if not ray_cast_right.is_colliding():
 			direction = -1
@@ -38,8 +38,19 @@ func _process(delta):
 			animated_sprite_2d.flip_h = true
 		position.x += direction * speed * delta
 
-
+#timer for snowman resurrection.  snowman will not hurt you until regeneration is complete
 func _on_timer_timeout() -> void:
-	is_carrot = !is_carrot
+	is_carrot = false
 	animated_sprite_2d.play("default")
 	$killzone/CollisionShape2D.disabled = false
+
+#when game manager says is spring, turn into carrot
+func _on_game_manager_spring() -> void:
+		is_carrot = true
+		$killzone/CollisionShape2D.disabled = true
+		animated_sprite_2d.play("Melts")
+		
+#when game manager says is winter, ressurect
+func _on_game_manager_winter() -> void:
+	animated_sprite_2d.play("resurrects")
+	timer.start() #the timer will trigger and turn the snowman hostile again
