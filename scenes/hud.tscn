@@ -1,9 +1,18 @@
 [gd_scene format=3 uid="uid://c5jjj8b5b62c5"]
 
+[ext_resource type="Script" uid="uid://cbwhxmkuynypm" path="res://scripts/hud.gd" id="1_ahhtf"]
+
 [node name="HUD" type="CanvasLayer" unique_id=244711438]
-follow_viewport_enabled = true
+script = ExtResource("1_ahhtf")
 
 [node name="ScoreLabel" type="Label" parent="." unique_id=387233266]
-offset_right = 40.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
 offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 64
 text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

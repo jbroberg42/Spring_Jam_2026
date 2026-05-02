@@ -58,7 +58,7 @@ shape = SubResource("CircleShape2D_1ikuy")
 position = Vector2(0, -2)
 amount = 5
 amount_ratio = 0.01
-lifetime = 0.060000000000000005
+lifetime = 0.06
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_i64fm")
 
