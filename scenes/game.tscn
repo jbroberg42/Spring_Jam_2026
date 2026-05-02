@@ -234,6 +234,9 @@ layout_mode = 2
 [node name="Flower" parent="." unique_id=516543460 instance=ExtResource("7_u5sy4")]
 position = Vector2(69, -78)
 
+[node name="Flower4" parent="." unique_id=1730049241 instance=ExtResource("7_u5sy4")]
+position = Vector2(81, 21)
+
 [node name="Flower2" parent="." unique_id=1341667305 instance=ExtResource("7_u5sy4")]
 position = Vector2(166, -101)
 
@@ -250,6 +253,12 @@ position = Vector2(-127, 58)
 position = Vector2(-87, -26)
 
 [node name="Coin" parent="." unique_id=1759638673 instance=ExtResource("4_lbhrr")]
+position = Vector2(68, -83)
+
+[node name="GameManager2" parent="." unique_id=1825844322 instance=ExtResource("1_vtaks")]
+unique_name_in_owner = true
+
+[node name="Coin8" parent="." unique_id=609307312 instance=ExtResource("4_lbhrr")]
 position = Vector2(68, -83)
 
 [node name="Coin2" parent="." unique_id=2091079003 instance=ExtResource("4_lbhrr")]
@@ -272,3 +281,5 @@ position = Vector2(376, -176)
 
 [connection signal="spring" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_spring"]
 [connection signal="winter" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_winter"]
+[connection signal="spring" from="GameManager2" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_spring"]
+[connection signal="winter" from="GameManager2" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_winter"]
