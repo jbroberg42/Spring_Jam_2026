@@ -1,19 +1,20 @@
-[gd_scene format=3 uid="uid://b2nwmnujtsats"]
+[gd_scene format=3 uid="uid://7mpdft6otq21"]
 
-[ext_resource type="Script" uid="uid://ppdvwm8dpm67" path="res://scripts/macguffin.gd" id="1_nfo6c"]
-[ext_resource type="Texture2D" uid="uid://dvl42vwwc6pdq" path="res://icon.svg" id="2_odbxc"]
+[ext_resource type="Script" uid="uid://dvruhqhowhgwn" path="res://scripts/dude_in_distress.gd" id="1_ckw0d"]
+[ext_resource type="Texture2D" uid="uid://dvl42vwwc6pdq" path="res://icon.svg" id="2_iwokb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvuet"]
 size = Vector2(8, 7)
 
-[node name="macguffin" type="Area2D" unique_id=1541742947]
+[node name="dude_in_distress" type="Area2D" unique_id=1541742947]
+scale = Vector2(0.43142632, 1.3543328)
 collision_mask = 2
-script = ExtResource("1_nfo6c")
+script = ExtResource("1_ckw0d")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1604170270]
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_odbxc")
+texture = ExtResource("2_iwokb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=701892352]
 scale = Vector2(3.0902138, 3.0902138)

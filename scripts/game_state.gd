@@ -8,7 +8,7 @@ var is_winter: bool = true
 var ability_cooldown: int = 1
 var ability_ready: bool = true
 
-var have_ring: bool = false
+var have_macguffin: bool = false
 
 var level_list: Array[String] = [
 	"res://scenes/game.tscn",
@@ -20,6 +20,6 @@ func reset():
 	level = 0
 	time_taken = 0
 	is_winter = true
-	have_ring = false
+	have_macguffin = false
 	ability_ready = true
 	get_tree().reload_current_scene()

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cgphpsr53so7u" path="res://scenes/game_manager.tscn" id="1_pil2j"]
 [ext_resource type="Texture2D" uid="uid://bi5q7fbi771my" path="res://assets/sprites/BackgroundTiles.png" id="2_k5ein"]
 [ext_resource type="PackedScene" uid="uid://cayewvh386mlo" path="res://scenes/player.tscn" id="3_psh0x"]
-[ext_resource type="Script" uid="uid://c64pbx7p3khmn" path="res://tile_map_layer.gd" id="3_wrnl3"]
+[ext_resource type="Script" uid="uid://c64pbx7p3khmn" path="res://scripts/tile_map_layer.gd" id="3_wrnl3"]
 [ext_resource type="PackedScene" uid="uid://cdsksi2n4eyfj" path="res://scenes/killzone.tscn" id="4_ac0cw"]
 [ext_resource type="PackedScene" uid="uid://brsw35h7doxjk" path="res://scenes/score.tscn" id="5_wbr6d"]
 [ext_resource type="PackedScene" uid="uid://dqmtby6fooixc" path="res://scenes/season_controller.tscn" id="6_2uuj8"]
