@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://cfomb8c2y7xbr"]
 
+[ext_resource type="Script" uid="uid://2bcx7kl2w42v" path="res://scripts/waterfall.gd" id="1_5yo30"]
 [ext_resource type="Texture2D" uid="uid://bi5q7fbi771my" path="res://assets/sprites/BackgroundTiles.png" id="1_cwatv"]
 [ext_resource type="Texture2D" uid="uid://dg66j340s45u4" path="res://assets/sprites/Waterfall.png" id="2_deq8o"]
 [ext_resource type="Texture2D" uid="uid://4ggcnsh174w" path="res://assets/sprites/WaterFreezing.png" id="3_deq8o"]
+[ext_resource type="PackedScene" uid="uid://cdsksi2n4eyfj" path="res://scenes/killzone.tscn" id="4_vbqhg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vbqhg"]
 texture = ExtResource("1_cwatv")
@@ -13,20 +15,66 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_vbqhg")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_147hk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_deq8o"]
 atlas = ExtResource("2_deq8o")
-region = Rect2(0, 0, 96, 96)
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbqhg"]
+atlas = ExtResource("2_deq8o")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yo30"]
+atlas = ExtResource("2_deq8o")
+region = Rect2(224, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_147hk"]
+atlas = ExtResource("3_deq8o")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f2r84"]
-atlas = ExtResource("2_deq8o")
-region = Rect2(96, 0, 96, 96)
+atlas = ExtResource("3_deq8o")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0sfw7"]
-atlas = ExtResource("2_deq8o")
-region = Rect2(192, 0, 96, 96)
+atlas = ExtResource("3_deq8o")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0vxg"]
+atlas = ExtResource("3_deq8o")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5grlk"]
+atlas = ExtResource("3_deq8o")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h623x"]
+atlas = ExtResource("3_deq8o")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6qq5"]
+atlas = ExtResource("3_deq8o")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dw6sn"]
+atlas = ExtResource("3_deq8o")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_t0vxg"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_deq8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbqhg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yo30")
+}],
+"loop": true,
+"name": &"flowing",
+"speed": 9.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_147hk")
@@ -36,24 +84,40 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0sfw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0vxg")
 }],
-"loop": true,
-"name": &"flowing",
-"speed": 9.0
+"loop": false,
+"name": &"freezing",
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_deq8o")
+"texture": SubResource("AtlasTexture_5grlk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h623x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6qq5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dw6sn")
 }],
-"loop": true,
-"name": &"freezing",
-"speed": 5.0
+"loop": false,
+"name": &"melting",
+"speed": 4.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5yo30"]
+size = Vector2(32, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cwatv"]
 size = Vector2(32, 32)
 
 [node name="waterfall" type="Area2D" unique_id=109474915]
+script = ExtResource("1_5yo30")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1708112755]
 tile_set = SubResource("TileSet_5yo30")
@@ -62,8 +126,19 @@ format = 2
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1191256091]
 position = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_t0vxg")
-animation = &"flowing"
+animation = &"freezing"
+autoplay = "flowing"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1786732075]
+[node name="killzone" parent="." unique_id=300587 instance=ExtResource("4_vbqhg")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=1421624386]
+position = Vector2(16, 14.5)
+shape = SubResource("RectangleShape2D_5yo30")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1679440411]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1786732075]
 position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_cwatv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
