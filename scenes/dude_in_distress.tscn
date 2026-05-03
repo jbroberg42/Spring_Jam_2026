@@ -1,23 +1,47 @@
 [gd_scene format=3 uid="uid://7mpdft6otq21"]
 
 [ext_resource type="Script" uid="uid://dvruhqhowhgwn" path="res://scripts/dude_in_distress.gd" id="1_ckw0d"]
-[ext_resource type="Texture2D" uid="uid://dvl42vwwc6pdq" path="res://icon.svg" id="2_iwokb"]
+[ext_resource type="Texture2D" uid="uid://btnigq78j8ra5" path="res://assets/sprites/Wizard.png" id="2_ckw0d"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvuet"]
-size = Vector2(8, 7)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwokb"]
+size = Vector2(3.236022, 8.737259)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ix037"]
+atlas = ExtResource("2_ckw0d")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8wcd"]
+atlas = ExtResource("2_ckw0d")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ko08"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ix037")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8wcd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
 
 [node name="dude_in_distress" type="Area2D" unique_id=1541742947]
-scale = Vector2(0.43142632, 1.3543328)
 collision_mask = 2
 script = ExtResource("1_ckw0d")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1604170270]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_iwokb")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=701892352]
+position = Vector2(0, 2.5)
 scale = Vector2(3.0902138, 3.0902138)
-shape = SubResource("RectangleShape2D_kvuet")
+shape = SubResource("RectangleShape2D_iwokb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=457533027]
+sprite_frames = SubResource("SpriteFrames_2ko08")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.23297423
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
