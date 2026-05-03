@@ -42,18 +42,24 @@ func _on_timer_2_timeout():
 func _on_timer_3_timeout():
 	if !GameState.is_winter: # verify spring so no invisible platform in winter
 		collision_shape_2d.disabled = false
-	anim.play("idle")
+		anim.play("reset")
 	readyattack = true
 		
 # when game manager says is winter, disappear
 func _on_game_manager_winter() -> void:
-	hide()
+	if readyattack == false:
+		anim.play("wither2")
+	if readyattack == true:
+		anim.play("wither1")
+	
 	$Area2D/CollisionShape2D2.disabled = true
 	$StaticBody2D/CollisionShape2D.disabled = true
 	$killzone/CollisionShape2D.disabled = true
 	
 # when game manager says is spring, reappear
 func _on_game_manager_spring() -> void:
-	show()
+	anim.play("grow")
+	#anim.play("idle")
+	
 	$Area2D/CollisionShape2D2.disabled = false
 	$StaticBody2D/CollisionShape2D.disabled = false
