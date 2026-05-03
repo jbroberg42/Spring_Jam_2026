@@ -5,7 +5,7 @@ var level: int = 0
 var time_taken: int = 0
 var is_winter: bool = false
 
-const ABILITY_COOLDOWN: int = 1
+const ABILITY_COOLDOWN: int = 5
 const LEVEL_LIST: Array[String] = [
 	"res://scenes/levels/level_1.tscn",
 	"res://scenes/levels/level_2.tscn",

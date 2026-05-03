@@ -4,11 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://bhckluo7277nc" path="res://scenes/map_layers.tscn" id="2_qsp8v"]
 [ext_resource type="PackedScene" uid="uid://cayewvh386mlo" path="res://scenes/player.tscn" id="3_nt80m"]
 [ext_resource type="PackedScene" uid="uid://b2haeh0vpbkww" path="res://scenes/sky.tscn" id="4_brxtv"]
+[ext_resource type="PackedScene" uid="uid://c5jjj8b5b62c5" path="res://scenes/hud.tscn" id="5_brxtv"]
 [ext_resource type="PackedScene" uid="uid://cdsksi2n4eyfj" path="res://scenes/killzone.tscn" id="5_tv7cl"]
-[ext_resource type="PackedScene" uid="uid://brsw35h7doxjk" path="res://scenes/score.tscn" id="6_r88tb"]
-[ext_resource type="PackedScene" uid="uid://dqmtby6fooixc" path="res://scenes/season_controller.tscn" id="7_1yj8c"]
 [ext_resource type="PackedScene" uid="uid://b01ysjg4xwbrd" path="res://scenes/blueSky.tscn" id="8_ndlae"]
-[ext_resource type="PackedScene" uid="uid://cavboor0v3h27" path="res://scenes/gem_indicator.tscn" id="8_r88tb"]
 [ext_resource type="PackedScene" uid="uid://7mpdft6otq21" path="res://scenes/dude_in_distress.tscn" id="9_v8d84"]
 [ext_resource type="PackedScene" uid="uid://cfomb8c2y7xbr" path="res://scenes/waterfall.tscn" id="10_qsp8v"]
 [ext_resource type="PackedScene" uid="uid://p4yhwp4qtcwy" path="res://scenes/iceSpikes.tscn" id="11_nt80m"]
@@ -46,38 +44,14 @@ position_smoothing_enabled = true
 
 [node name="Sky" parent="Player/Camera2D" unique_id=1797930561 instance=ExtResource("4_brxtv")]
 
+[node name="HUD" parent="." unique_id=1730292578 instance=ExtResource("5_brxtv")]
+
 [node name="killzone" parent="." unique_id=300587 instance=ExtResource("5_tv7cl")]
 position = Vector2(0, 164)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=259522311]
 position = Vector2(165, 40)
 shape = SubResource("WorldBoundaryShape2D_p57ef")
-
-[node name="HUD" type="CanvasLayer" parent="." unique_id=1081156825]
-
-[node name="Control" type="Control" parent="HUD" unique_id=918203041]
-layout_mode = 3
-anchor_left = 0.05
-anchor_top = 0.1
-anchor_right = 0.068
-anchor_bottom = 0.107
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Control" unique_id=1374680731]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_constants/separation = 60
-
-[node name="Score" parent="HUD/Control/VBoxContainer" unique_id=1416161994 instance=ExtResource("6_r88tb")]
-layout_mode = 2
-
-[node name="Season_controller" parent="HUD/Control/VBoxContainer" unique_id=2054882766 instance=ExtResource("7_1yj8c")]
-layout_mode = 2
-
-[node name="gem_indicator" parent="HUD/Control/VBoxContainer" unique_id=1463024844 instance=ExtResource("8_r88tb")]
-layout_mode = 2
 
 [node name="BlueSky" parent="." unique_id=2020679628 instance=ExtResource("8_ndlae")]
 scale = Vector2(2.5236473, 1.3322281)
@@ -149,8 +123,5 @@ position = Vector2(1168, -101)
 
 [node name="macguffin" parent="." unique_id=1288286580 instance=ExtResource("13_r88tb")]
 position = Vector2(1394, -107)
-
-[connection signal="spring" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_spring"]
-[connection signal="winter" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_winter"]
 
 [editable path="map_layers"]

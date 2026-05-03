@@ -13,13 +13,16 @@ func _ready():
 	else:
 		_on_game_manager_spring()
 	
-	
+
 func _on_game_manager_spring() -> void:
 	$killzone/CollisionShape2D.disabled = false
 	$AnimatedSprite2D.play("melting")
-	await get_tree().create_timer(0.4).timeout
-	$AnimatedSprite2D.play("flowing")
+	$Timer.start()
 		
 func _on_game_manager_winter() -> void:
 	$killzone/CollisionShape2D.disabled = true
 	$AnimatedSprite2D.play("freezing")
+	print("here")
+
+func _on_timer_timeout() -> void:
+	$AnimatedSprite2D.play("flowing")

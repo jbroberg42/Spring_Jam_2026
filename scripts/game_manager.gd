@@ -17,6 +17,7 @@ func load_next_level():
 	
 func switch_seasons():
 	GameState.is_winter = !GameState.is_winter
+	print("here")
 	if GameState.is_winter:
 		winter.emit()
 	else:
