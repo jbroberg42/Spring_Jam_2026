@@ -63,7 +63,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"flowing",
-"speed": 9.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -80,7 +80,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"freezing",
-"speed": 4.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -111,7 +111,7 @@ script = ExtResource("1_5yo30")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1191256091]
 sprite_frames = SubResource("SpriteFrames_t0vxg")
-animation = &"flowing"
+animation = &"melting"
 autoplay = "flowing"
 
 [node name="killzone" parent="." unique_id=300587 instance=ExtResource("4_vbqhg")]
