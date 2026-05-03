@@ -261,7 +261,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bvces"]
-size = Vector2(16, 29)
+size = Vector2(16, 26)
 
 [node name="Snowman" type="Node2D" unique_id=1341636080]
 script = ExtResource("1_fw3vj")
@@ -278,7 +278,7 @@ flip_h = true
 [node name="killzone" parent="." unique_id=300587 instance=ExtResource("2_fw3vj")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=1061202736]
-position = Vector2(1, -8.5)
+position = Vector2(1, -7)
 shape = SubResource("RectangleShape2D_bvces")
 
 [node name="RayCastRight" type="RayCast2D" parent="." unique_id=762973220]
