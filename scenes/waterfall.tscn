@@ -63,7 +63,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"flowing",
-"speed": 9.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
