@@ -1,79 +1,28 @@
 [gd_scene format=4 uid="uid://dace6iugog45x"]
 
 [ext_resource type="PackedScene" uid="uid://cgphpsr53so7u" path="res://scenes/game_manager.tscn" id="1_pil2j"]
+[ext_resource type="PackedScene" uid="uid://bjl6gx66ififc" path="res://scenes/map_layers.tscn" id="2_cm1v6"]
 [ext_resource type="PackedScene" uid="uid://cayewvh386mlo" path="res://scenes/player.tscn" id="3_psh0x"]
 [ext_resource type="PackedScene" uid="uid://cdsksi2n4eyfj" path="res://scenes/killzone.tscn" id="4_ac0cw"]
 [ext_resource type="PackedScene" uid="uid://brsw35h7doxjk" path="res://scenes/score.tscn" id="5_wbr6d"]
 [ext_resource type="PackedScene" uid="uid://dqmtby6fooixc" path="res://scenes/season_controller.tscn" id="6_2uuj8"]
-[ext_resource type="Texture2D" uid="uid://cbmanyuxq5gg0" path="res://assets/sprites/WinterTileSet.png" id="7_wrnl3"]
-[ext_resource type="Texture2D" uid="uid://dkby3rum8x4ap" path="res://assets/sprites/SpringTileSet.png" id="8_6q6d4"]
 [ext_resource type="PackedScene" uid="uid://cdla4ro8ecejr" path="res://scenes/snowman.tscn" id="8_6xkrd"]
-[ext_resource type="Script" uid="uid://c1jfq1vsyfrdr" path="res://scripts/season_sensitive_tilemap.gd" id="8_tcqsn"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
 distance = -2.0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6q6d4"]
-texture = ExtResource("7_wrnl3")
-texture_region_size = Vector2i(32, 32)
-21:8/0 = 0
-22:8/0 = 0
-22:9/0 = 0
-23:9/0 = 0
-22:10/0 = 0
-22:11/0 = 0
-22:12/0 = 0
-22:13/0 = 0
-21:14/0 = 0
-22:14/0 = 0
-23:14/0 = 0
-25:14/0 = 0
-21:15/0 = 0
-22:15/0 = 0
-23:15/0 = 0
-25:15/0 = 0
-20:16/0 = 0
-21:16/0 = 0
-23:16/0 = 0
-24:16/0 = 0
-25:16/0 = 0
-26:16/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l3elg"]
-texture = ExtResource("8_6q6d4")
-texture_region_size = Vector2i(32, 32)
-21:8/0 = 0
-22:8/0 = 0
-22:9/0 = 0
-23:9/0 = 0
-22:10/0 = 0
-22:11/0 = 0
-22:12/0 = 0
-22:13/0 = 0
-21:14/0 = 0
-22:14/0 = 0
-23:14/0 = 0
-25:14/0 = 0
-21:15/0 = 0
-22:15/0 = 0
-23:15/0 = 0
-25:15/0 = 0
-20:16/0 = 0
-21:16/0 = 0
-23:16/0 = 0
-24:16/0 = 0
-25:16/0 = 0
-26:16/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_l3elg"]
-tile_size = Vector2i(32, 32)
-sources/2 = SubResource("TileSetAtlasSource_6q6d4")
-sources/3 = SubResource("TileSetAtlasSource_l3elg")
 
 [node name="level0" type="Node2D" unique_id=874965567]
 
 [node name="GameManager" parent="." unique_id=1990519776 instance=ExtResource("1_pil2j")]
 unique_name_in_owner = true
+
+[node name="map_layers" parent="." unique_id=906720902 instance=ExtResource("2_cm1v6")]
+
+[node name="winter_layer" parent="map_layers" index="0" unique_id=608528123]
+tile_map_data = PackedByteArray("AAD+/wEAAQAWAA4AAAD//wEAAQAWAA4AAAAAAAEAAQAWAA4AAAABAAEAAQAWAA4AAAACAAEAAQAWAA4AAAACAAAAAQAWAA0AAAABAP//AQAVAAgAAAACAP//AQAWAAgAAAA=")
+
+[node name="spring_layer" parent="map_layers" index="1" unique_id=698821074]
+tile_map_data = PackedByteArray("AAD+/wEAAwAWAA4AAAD//wEAAwAWAA4AAAAAAAEAAwAWAA4AAAABAAEAAwAWAA4AAAACAAEAAwAWAA4AAAACAAAAAwAWAA0AAAACAP//AwAWAAgAAAABAP//AwAVAAgAAAA=")
 
 [node name="Player" parent="." unique_id=1867319898 instance=ExtResource("3_psh0x")]
 position = Vector2(24, -7)
@@ -121,10 +70,7 @@ layout_mode = 2
 [node name="Snowman" parent="." unique_id=1341636080 instance=ExtResource("8_6xkrd")]
 position = Vector2(-152, -38)
 
-[node name="season_sensitive_tilemap" type="TileMapLayer" parent="." unique_id=140547937]
-tile_map_data = PackedByteArray("AAD//wAAAgAWAA4AAAAAAAAAAgAWAA4AAAABAAAAAgAWAA4AAAACAAAAAgAWAA4AAAADAAAAAgAVABAAAAADAP//AgAVAA4AAAAEAP//AgAWAA4AAAA=")
-tile_set = SubResource("TileSet_l3elg")
-script = ExtResource("8_tcqsn")
-
 [connection signal="spring" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_spring"]
 [connection signal="winter" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_winter"]
+
+[editable path="map_layers"]

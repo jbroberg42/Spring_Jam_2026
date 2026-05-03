@@ -1,0 +1,23 @@
+extends Node2D
+
+@onready var game_manager: Node = %GameManager
+
+func _ready():
+
+	# connect signals with code.  Otherwise you have to connect each mob manually.  Which sucks.
+	game_manager.spring.connect(_on_game_manager_spring)
+	game_manager.winter.connect(_on_game_manager_winter)
+	
+	if GameState.is_winter:
+		_on_game_manager_winter()
+	else:
+		_on_game_manager_spring()
+	
+	
+func _on_game_manager_spring() -> void:
+	$winter_layer.hide()
+	$spring_layer.show()
+		
+func _on_game_manager_winter() -> void:
+	$winter_layer.show()
+	$spring_layer.hide()
