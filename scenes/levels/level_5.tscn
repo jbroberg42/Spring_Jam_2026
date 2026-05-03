@@ -260,7 +260,7 @@ position = Vector2(1247, -368)
 position = Vector2(1225, -330)
 
 [node name="macguffin" parent="." unique_id=340897352 instance=ExtResource("14_0y7y4")]
-position = Vector2(1266, 61)
+position = Vector2(1260, 85)
 
 [connection signal="spring" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_spring"]
 [connection signal="winter" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_winter"]
