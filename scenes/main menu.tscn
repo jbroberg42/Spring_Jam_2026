@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://j2rbmprlyjw5" path="res://assets/sprites/title.png" id="1_xsilq"]
 [ext_resource type="Texture2D" uid="uid://6ip5svysa1qb" path="res://assets/sprites/start.png" id="2_12vek"]
 [ext_resource type="Texture2D" uid="uid://dhfjjca0bjjmr" path="res://assets/sprites/Flower petal.png" id="3_12vek"]
+[ext_resource type="Texture2D" uid="uid://bdgyhk74kdnkb" path="res://assets/sprites/GooseIdle.png" id="4_km7eu"]
+[ext_resource type="Texture2D" uid="uid://jl3y1xkqnqa5" path="res://assets/sprites/quit.png" id="5_5a6dn"]
 
 [sub_resource type="Gradient" id="Gradient_u5sy4"]
 offsets = PackedFloat32Array(0, 0.18992248, 1)
@@ -53,10 +55,47 @@ turbulence_enabled = true
 turbulence_influence_min = 0.032
 turbulence_influence_max = 0.11800001
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljdde"]
+atlas = ExtResource("4_km7eu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oy07q"]
+atlas = ExtResource("4_km7eu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1qw6"]
+atlas = ExtResource("4_km7eu")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fak3k"]
+atlas = ExtResource("4_km7eu")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4w47j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljdde")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oy07q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1qw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fak3k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Sky" type="Sprite2D" unique_id=1169360015]
 texture = SubResource("GradientTexture2D_v26od")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=971608616]
+z_index = 1
 position = Vector2(0, -2)
 scale = Vector2(3.65625, 3.65625)
 texture = ExtResource("1_xsilq")
@@ -80,3 +119,15 @@ texture = ExtResource("3_12vek")
 lifetime = 10.0
 preprocess = 30.0
 process_material = SubResource("ParticleProcessMaterial_5a6dn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=200500889]
+position = Vector2(0, -89.99999)
+scale = Vector2(3.5, 3.5)
+sprite_frames = SubResource("SpriteFrames_4w47j")
+autoplay = "default"
+frame_progress = 0.7802515
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1792574728]
+position = Vector2(0, 162)
+scale = Vector2(4.1875005, 4.1875005)
+texture = ExtResource("5_5a6dn")
