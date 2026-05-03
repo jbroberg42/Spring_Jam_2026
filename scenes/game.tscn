@@ -300,7 +300,7 @@ position = Vector2(128, 64)
 scale = Vector2(2.288371, 1.3417726)
 scroll_offset = Vector2(575.00006, 325)
 
-[node name="Node2D" parent="." unique_id=1627656771 instance=ExtResource("15_ir15t")]
+[node name="IceSpikes" parent="." unique_id=1627656771 instance=ExtResource("15_ir15t")]
 position = Vector2(-16, 48)
 
 [connection signal="spring" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_spring"]

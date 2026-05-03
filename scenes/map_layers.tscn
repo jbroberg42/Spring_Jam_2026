@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cbmanyuxq5gg0" path="res://assets/sprites/WinterTileSet.png" id="1_21cy3"]
 [ext_resource type="Script" uid="uid://bpn65pqnex3op" path="res://scripts/map_layers.gd" id="1_pq3wk"]
 [ext_resource type="Texture2D" uid="uid://dkby3rum8x4ap" path="res://assets/sprites/SpringTileSet.png" id="2_pq3wk"]
+[ext_resource type="Texture2D" uid="uid://dg66j340s45u4" path="res://assets/sprites/Waterfall.png" id="4_ematx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b2cu3"]
 texture = ExtResource("1_21cy3")
@@ -88,11 +89,26 @@ texture_region_size = Vector2i(32, 32)
 26:16/0 = 0
 26:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f1ojr"]
+texture = ExtResource("4_ematx")
+texture_region_size = Vector2i(32, 32)
+1:1/animation_separation = Vector2i(2, 0)
+1:1/animation_frame_0/duration = 0.3
+1:1/animation_frame_1/duration = 0.3
+1:1/animation_frame_2/duration = 0.3
+1:1/0 = 0
+1:0/animation_separation = Vector2i(2, 0)
+1:0/animation_frame_0/duration = 0.3
+1:0/animation_frame_1/duration = 0.3
+1:0/animation_frame_2/duration = 0.3
+1:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_o6pqg"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_b2cu3")
 sources/3 = SubResource("TileSetAtlasSource_2hll8")
+sources/5 = SubResource("TileSetAtlasSource_f1ojr")
 
 [node name="map_layers" type="Node2D" unique_id=906720902]
 script = ExtResource("1_pq3wk")
