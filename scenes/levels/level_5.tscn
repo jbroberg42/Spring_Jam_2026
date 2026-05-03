@@ -1,0 +1,132 @@
+[gd_scene format=4 uid="uid://dnaotvqcfqti8"]
+
+[ext_resource type="PackedScene" uid="uid://cgphpsr53so7u" path="res://scenes/game_manager.tscn" id="1_mxx4w"]
+[ext_resource type="PackedScene" uid="uid://bhckluo7277nc" path="res://scenes/map_layers.tscn" id="2_vvoq0"]
+[ext_resource type="PackedScene" uid="uid://cayewvh386mlo" path="res://scenes/player.tscn" id="3_tqnj0"]
+[ext_resource type="PackedScene" uid="uid://b2haeh0vpbkww" path="res://scenes/sky.tscn" id="4_dwyms"]
+[ext_resource type="PackedScene" uid="uid://cdsksi2n4eyfj" path="res://scenes/killzone.tscn" id="5_6xwso"]
+[ext_resource type="PackedScene" path="res://scenes/score.tscn" id="6_5ke18"]
+[ext_resource type="PackedScene" uid="uid://dqmtby6fooixc" path="res://scenes/season_controller.tscn" id="7_j14br"]
+[ext_resource type="PackedScene" uid="uid://b01ysjg4xwbrd" path="res://scenes/blueSky.tscn" id="8_0y7y4"]
+[ext_resource type="PackedScene" uid="uid://cfomb8c2y7xbr" path="res://scenes/waterfall.tscn" id="9_tqnj0"]
+[ext_resource type="PackedScene" uid="uid://bk5kjhu5jih5s" path="res://scenes/iceSpikes.tscn" id="10_dwyms"]
+[ext_resource type="PackedScene" uid="uid://cdla4ro8ecejr" path="res://scenes/snowman.tscn" id="11_dwyms"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
+distance = -2.0
+
+[node name="level0" type="Node2D" unique_id=874965567]
+
+[node name="GameManager" parent="." unique_id=1990519776 instance=ExtResource("1_mxx4w")]
+unique_name_in_owner = true
+
+[node name="map_layers" parent="." unique_id=906720902 instance=ExtResource("2_vvoq0")]
+
+[node name="winter_layer" parent="map_layers" index="0" unique_id=608528123]
+tile_map_data = PackedByteArray("AAAAAAEAAQAWAA4AAAD//wEAAQAVAA4AAAD//wIAAQAVAA8AAAAAAAIAAQAWAA8AAAABAAEAAQAXAA4AAAABAAIAAQAXAA8AAAD//wMAAQAVAA8AAAAAAAMAAQAWAA8AAAABAAMAAQAXAA8AAAD//wQAAQAVAA8AAAAAAAQAAQAWAA8AAAABAAQAAQAXAA8AAAD//wUAAQAVAA8AAAAAAAUAAQAWAA8AAAABAAUAAQAXAA8AAAD//wYAAQAVAA8AAAAAAAYAAQAWAA8AAAABAAYAAQAXAA8AAAD//wcAAQAVAA8AAAAAAAcAAQAWAA8AAAABAAcAAQAXAA8AAAD//wgAAQAVAA8AAAAAAAgAAQAWAA8AAAABAAgAAQAXAA8AAAD//wkAAQAVAA8AAAAAAAkAAQAWAA8AAAABAAkAAQAXAA8AAAD//woAAQAVAA8AAAAAAAoAAQAWAA8AAAABAAoAAQAXAA8AAAD//wsAAQAVAA8AAAAAAAsAAQAWAA8AAAABAAsAAQAXAA8AAAANAAEAAQAZAA4AAAANAAIAAQAZAA8AAAANAAMAAQAZAA8AAAANAAQAAQAZAA8AAAANAAUAAQAZAA8AAAANAAYAAQAZAA8AAAANAAcAAQAZAA8AAAANAAgAAQAZAA8AAAANAAkAAQAZAA8AAAANAAoAAQAZAA8AAAANAAsAAQAZAA8AAAACAAMAAAADAAEAAAADAAQAAAADAAEAAAAEAAUAAAADAAEAAAAFAAUAAAADAAEAAAAFAAYAAAADAAEAAAAGAAYAAAADAAEAAAAGAAcAAAADAAEAAAAHAAcAAAADAAEAAAACAAQAAAADAAEAAAACAAUAAAADAAEAAAACAAYAAAADAAEAAAACAAcAAAADAAEAAAACAAgAAAADAAEAAAACAAkAAAADAAEAAAACAAoAAAADAAEAAAACAAsAAAADAAEAAAADAAMAAAADAAEAAAADAAUAAAADAAEAAAADAAYAAAADAAEAAAADAAcAAAADAAEAAAADAAgAAAADAAEAAAADAAkAAAADAAEAAAADAAoAAAADAAEAAAADAAsAAAADAAEAAAAEAAMAAAADAAEAAAAEAAQAAAADAAEAAAAEAAYAAAADAAEAAAAEAAcAAAADAAEAAAAEAAgAAAADAAEAAAAEAAkAAAADAAEAAAAEAAoAAAADAAEAAAAEAAsAAAADAAEAAAAFAAMAAAADAAEAAAAFAAQAAAADAAEAAAAFAAcAAAADAAEAAAAFAAgAAAADAAEAAAAFAAkAAAADAAEAAAAFAAoAAAADAAEAAAAFAAsAAAADAAEAAAAGAAMAAAADAAEAAAAGAAQAAAADAAEAAAAGAAUAAAADAAEAAAAGAAgAAAADAAEAAAAGAAkAAAADAAEAAAAGAAoAAAADAAEAAAAGAAsAAAADAAEAAAAHAAMAAAADAAEAAAAHAAQAAAADAAEAAAAHAAUAAAADAAEAAAAHAAYAAAADAAEAAAAHAAgAAAADAAEAAAAHAAkAAAADAAEAAAAHAAoAAAADAAEAAAAHAAsAAAADAAEAAAAIAAMAAAADAAEAAAAIAAQAAAADAAEAAAAIAAUAAAADAAEAAAAIAAYAAAADAAEAAAAIAAcAAAADAAEAAAAIAAgAAAADAAEAAAAIAAkAAAADAAEAAAAIAAoAAAADAAEAAAAIAAsAAAADAAEAAAAJAAMAAAADAAEAAAAJAAQAAAADAAEAAAAJAAUAAAADAAEAAAAJAAYAAAADAAEAAAAJAAcAAAADAAEAAAAJAAgAAAADAAEAAAAJAAkAAAADAAEAAAAJAAoAAAADAAEAAAAJAAsAAAADAAEAAAAKAAMAAAADAAEAAAAKAAQAAAADAAEAAAAKAAUAAAADAAEAAAAKAAYAAAADAAEAAAAKAAcAAAADAAEAAAAKAAgAAAADAAEAAAAKAAkAAAADAAEAAAAKAAoAAAADAAEAAAAKAAsAAAADAAEAAAALAAMAAAADAAEAAAALAAQAAAADAAEAAAALAAUAAAADAAEAAAALAAYAAAADAAEAAAALAAcAAAADAAEAAAALAAgAAAADAAEAAAALAAkAAAADAAEAAAALAAoAAAADAAEAAAALAAsAAAADAAEAAAAMAAMAAAADAAEAAAAMAAQAAAADAAEAAAAMAAUAAAADAAEAAAAMAAYAAAADAAEAAAAMAAcAAAADAAEAAAAMAAgAAAADAAEAAAAMAAkAAAADAAEAAAAMAAoAAAADAAEAAAAMAAsAAAADAAEAAAA=")
+
+[node name="spring_layer" parent="map_layers" index="1" unique_id=698821074]
+tile_map_data = PackedByteArray("AAAAAAEAAwAWAA4AAAD//wEAAwAVAA4AAAD//wIAAwAVAA8AAAAAAAIAAwAWAA8AAAABAAEAAwAXAA4AAAABAAIAAwAXAA8AAAD//wMAAwAVAA8AAAAAAAMAAwAWAA8AAAABAAMAAwAXAA8AAAD//wQAAwAVAA8AAAAAAAQAAwAWAA8AAAABAAQAAwAXAA8AAAD//wUAAwAVAA8AAAAAAAUAAwAWAA8AAAABAAUAAwAXAA8AAAD//wYAAwAVAA8AAAAAAAYAAwAWAA8AAAABAAYAAwAXAA8AAAD//wcAAwAVAA8AAAAAAAcAAwAWAA8AAAABAAcAAwAXAA8AAAD//wgAAwAVAA8AAAAAAAgAAwAWAA8AAAABAAgAAwAXAA8AAAD//wkAAwAVAA8AAAAAAAkAAwAWAA8AAAABAAkAAwAXAA8AAAD//woAAwAVAA8AAAAAAAoAAwAWAA8AAAABAAoAAwAXAA8AAAD//wsAAwAVAA8AAAAAAAsAAwAWAA8AAAABAAsAAwAXAA8AAAANAAEAAwAZAA4AAAANAAIAAwAZAA8AAAANAAMAAwAZAA8AAAANAAQAAwAZAA8AAAANAAUAAwAZAA8AAAANAAYAAwAZAA8AAAANAAcAAwAZAA8AAAANAAgAAwAZAA8AAAANAAkAAwAZAA8AAAANAAoAAwAZAA8AAAANAAsAAwAZAA8AAAACAAMABQABAAEAAAACAAQABQABAAEAAAACAAUABQABAAEAAAACAAYABQABAAEAAAACAAcABQABAAEAAAACAAgABQABAAEAAAACAAkABQABAAEAAAACAAoABQABAAEAAAACAAsABQABAAEAAAADAAMABQABAAEAAAADAAQABQABAAEAAAADAAUABQABAAEAAAADAAYABQABAAEAAAADAAcABQABAAEAAAADAAgABQABAAEAAAADAAkABQABAAEAAAADAAoABQABAAEAAAADAAsABQABAAEAAAAEAAMABQABAAEAAAAEAAQABQABAAEAAAAEAAUABQABAAEAAAAEAAYABQABAAEAAAAEAAcABQABAAEAAAAEAAgABQABAAEAAAAEAAkABQABAAEAAAAEAAoABQABAAEAAAAEAAsABQABAAEAAAAFAAMABQABAAEAAAAFAAQABQABAAEAAAAFAAUABQABAAEAAAAFAAYABQABAAEAAAAFAAcABQABAAEAAAAFAAgABQABAAEAAAAFAAkABQABAAEAAAAFAAoABQABAAEAAAAFAAsABQABAAEAAAAGAAMABQABAAEAAAAGAAQABQABAAEAAAAGAAUABQABAAEAAAAGAAYABQABAAEAAAAGAAcABQABAAEAAAAGAAgABQABAAEAAAAGAAkABQABAAEAAAAGAAoABQABAAEAAAAGAAsABQABAAEAAAAHAAMABQABAAEAAAAHAAQABQABAAEAAAAHAAUABQABAAEAAAAHAAYABQABAAEAAAAHAAcABQABAAEAAAAHAAgABQABAAEAAAAHAAkABQABAAEAAAAHAAoABQABAAEAAAAHAAsABQABAAEAAAAIAAMABQABAAEAAAAIAAQABQABAAEAAAAIAAUABQABAAEAAAAIAAYABQABAAEAAAAIAAcABQABAAEAAAAIAAgABQABAAEAAAAIAAkABQABAAEAAAAIAAoABQABAAEAAAAIAAsABQABAAEAAAAJAAMABQABAAEAAAAJAAQABQABAAEAAAAJAAUABQABAAEAAAAJAAYABQABAAEAAAAJAAcABQABAAEAAAAJAAgABQABAAEAAAAJAAkABQABAAEAAAAJAAoABQABAAEAAAAJAAsABQABAAEAAAAKAAMABQABAAEAAAAKAAQABQABAAEAAAAKAAUABQABAAEAAAAKAAYABQABAAEAAAAKAAcABQABAAEAAAAKAAgABQABAAEAAAAKAAkABQABAAEAAAAKAAoABQABAAEAAAAKAAsABQABAAEAAAALAAMABQABAAEAAAALAAQABQABAAEAAAALAAUABQABAAEAAAALAAYABQABAAEAAAALAAcABQABAAEAAAALAAgABQABAAEAAAALAAkABQABAAEAAAALAAoABQABAAEAAAALAAsABQABAAEAAAAMAAMABQABAAEAAAAMAAQABQABAAEAAAAMAAUABQABAAEAAAAMAAYABQABAAEAAAAMAAcABQABAAEAAAAMAAgABQABAAEAAAAMAAkABQABAAEAAAAMAAoABQABAAEAAAAMAAsABQABAAEAAAA=")
+
+[node name="Player" parent="." unique_id=1867319898 instance=ExtResource("3_tqnj0")]
+position = Vector2(24, -7)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=220398274]
+position = Vector2(0, -5)
+zoom = Vector2(4, 4)
+limit_left = -9999946
+limit_top = -9999998
+limit_right = 10000054
+limit_bottom = 122
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="Sky" parent="Player/Camera2D" unique_id=1797930561 instance=ExtResource("4_dwyms")]
+
+[node name="killzone" parent="." unique_id=300587 instance=ExtResource("5_6xwso")]
+position = Vector2(23, 59)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=259522311]
+position = Vector2(165, 40)
+shape = SubResource("WorldBoundaryShape2D_p57ef")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1081156825]
+
+[node name="Control" type="Control" parent="HUD" unique_id=918203041]
+layout_mode = 3
+anchor_left = 0.05
+anchor_top = 0.1
+anchor_right = 0.068
+anchor_bottom = 0.107
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Control" unique_id=1374680731]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 60
+
+[node name="Score" parent="HUD/Control/VBoxContainer" unique_id=1416161994 instance=ExtResource("6_5ke18")]
+layout_mode = 2
+
+[node name="Season_controller" parent="HUD/Control/VBoxContainer" unique_id=2054882766 instance=ExtResource("7_j14br")]
+layout_mode = 2
+
+[node name="BlueSky" parent="." unique_id=2020679628 instance=ExtResource("8_0y7y4")]
+scale = Vector2(2.5236473, 1.3322281)
+scroll_offset = Vector2(583.00006, 317)
+
+[node name="mobs" type="Node" parent="." unique_id=684075897]
+
+[node name="waterfall" parent="mobs" unique_id=109474915 instance=ExtResource("9_tqnj0")]
+position = Vector2(80, 64)
+
+[node name="waterfall2" parent="mobs" unique_id=393070465 instance=ExtResource("9_tqnj0")]
+position = Vector2(112, 64)
+
+[node name="waterfall3" parent="mobs" unique_id=1086998796 instance=ExtResource("9_tqnj0")]
+position = Vector2(144, 64)
+
+[node name="waterfall4" parent="mobs" unique_id=799319666 instance=ExtResource("9_tqnj0")]
+position = Vector2(176, 64)
+
+[node name="waterfall5" parent="mobs" unique_id=330715434 instance=ExtResource("9_tqnj0")]
+position = Vector2(208, 64)
+
+[node name="waterfall6" parent="mobs" unique_id=1637422714 instance=ExtResource("9_tqnj0")]
+position = Vector2(240, 64)
+
+[node name="waterfall7" parent="mobs" unique_id=1805978406 instance=ExtResource("9_tqnj0")]
+position = Vector2(272, 64)
+
+[node name="waterfall8" parent="mobs" unique_id=342304253 instance=ExtResource("9_tqnj0")]
+position = Vector2(304, 64)
+
+[node name="waterfall9" parent="mobs" unique_id=855578962 instance=ExtResource("9_tqnj0")]
+position = Vector2(336, 64)
+
+[node name="waterfall10" parent="mobs" unique_id=1165433005 instance=ExtResource("9_tqnj0")]
+position = Vector2(368, 64)
+
+[node name="waterfall11" parent="mobs" unique_id=500155412 instance=ExtResource("9_tqnj0")]
+position = Vector2(400, 64)
+
+[node name="Node2D" parent="mobs" unique_id=1627656771 instance=ExtResource("10_dwyms")]
+position = Vector2(144, 47)
+
+[node name="Node2D2" parent="mobs" unique_id=241803846 instance=ExtResource("10_dwyms")]
+position = Vector2(240, 47)
+
+[node name="Node2D3" parent="mobs" unique_id=696138150 instance=ExtResource("10_dwyms")]
+position = Vector2(400, 47)
+
+[node name="Snowman" parent="mobs" unique_id=1341636080 instance=ExtResource("11_dwyms")]
+position = Vector2(281, 54)
+
+[node name="coins" type="Node" parent="." unique_id=1125279758]
+
+[connection signal="spring" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_spring"]
+[connection signal="winter" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_winter"]
+
+[editable path="map_layers"]

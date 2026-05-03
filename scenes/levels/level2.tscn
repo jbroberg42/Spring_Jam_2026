@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://5oqj3psn7rhx"]
+[gd_scene format=4 uid="uid://b3lp23ht21gdw"]
 
 [ext_resource type="PackedScene" uid="uid://cgphpsr53so7u" path="res://scenes/game_manager.tscn" id="1_k0mew"]
 [ext_resource type="PackedScene" uid="uid://bjl6gx66ififc" path="res://scenes/map_layers.tscn" id="2_b0vvs"]

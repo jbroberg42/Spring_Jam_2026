@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cfomb8c2y7xbr"]
 
-[ext_resource type="Script" uid="uid://2bcx7kl2w42v" path="res://scripts/waterfall.gd" id="1_5yo30"]
+[ext_resource type="Script" path="res://scripts/waterfall.gd" id="1_5yo30"]
 [ext_resource type="Texture2D" uid="uid://dg66j340s45u4" path="res://assets/sprites/Waterfall.png" id="2_deq8o"]
 [ext_resource type="Texture2D" uid="uid://6y2l2e0q1ul7" path="res://assets/sprites/waterfallFreezingalltogether.png" id="3_vbqhg"]
 [ext_resource type="PackedScene" uid="uid://cdsksi2n4eyfj" path="res://scenes/killzone.tscn" id="4_vbqhg"]
