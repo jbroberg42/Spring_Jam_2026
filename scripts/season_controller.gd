@@ -12,7 +12,7 @@ func _on_game_manager_winter() -> void:
 	cooldown_label()
 	
 func cooldown_label():
-	var a = GameState.ability_cooldown
+	var a = GameState.ABILITY_COOLDOWN
 	for i in a:
 		$Label.text = str(a)
 		a -= 1

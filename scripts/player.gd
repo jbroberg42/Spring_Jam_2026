@@ -38,7 +38,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _ready() -> void:
-	$cooldown_timer.wait_time = GameState.ability_cooldown
+	$cooldown_timer.wait_time = GameState.ABILITY_COOLDOWN
 
 #check if player has switched, and check cooldown
 func _process(delta: float) -> void:
