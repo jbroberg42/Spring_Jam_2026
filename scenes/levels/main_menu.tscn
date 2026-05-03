@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dhfjjca0bjjmr" path="res://assets/sprites/Flower petal.png" id="3_12vek"]
 [ext_resource type="Texture2D" uid="uid://bdgyhk74kdnkb" path="res://assets/sprites/GooseIdle.png" id="4_km7eu"]
 [ext_resource type="Texture2D" uid="uid://jl3y1xkqnqa5" path="res://assets/sprites/quit.png" id="5_5a6dn"]
+[ext_resource type="Script" uid="uid://dqg2hlqejvh2g" path="res://scripts/start_button.gd" id="5_crctu"]
+[ext_resource type="Script" uid="uid://dxy3skc7gj3in" path="res://scripts/quit_button.gd" id="6_crctu"]
 
 [sub_resource type="Gradient" id="Gradient_u5sy4"]
 offsets = PackedFloat32Array(0, 0.18992248, 1)
@@ -94,42 +96,71 @@ animations = [{
 [node name="main_menu" type="Node" unique_id=859340806]
 
 [node name="Sky" type="Sprite2D" parent="." unique_id=1169360015]
+position = Vector2(576, 324)
+scale = Vector2(2.302527, 1.3416358)
 texture = SubResource("GradientTexture2D_v26od")
 
-[node name="Sprite2D" type="Sprite2D" parent="Sky" unique_id=971608616]
-z_index = 1
-position = Vector2(0, -2)
-scale = Vector2(3.65625, 3.65625)
-texture = ExtResource("1_xsilq")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Sky" unique_id=2111618627]
-position = Vector2(0, 109)
+[node name="Snow" type="GPUParticles2D" parent="Sky" unique_id=1686797525]
+position = Vector2(492.99997, -269)
 scale = Vector2(4.1875, 4.1874995)
-texture = ExtResource("2_12vek")
-
-[node name="Snow" type="GPUParticles2D" parent="Sky/Sprite2D2" unique_id=1686797525]
-position = Vector2(117.73134, -90.26867)
 amount = 100
 lifetime = 10.0
 preprocess = 30.0
 process_material = SubResource("ParticleProcessMaterial_vsw8r")
 
-[node name="Petals" type="GPUParticles2D" parent="Sky/Sprite2D2" unique_id=616777844]
-position = Vector2(-97.19403, -89.313446)
+[node name="Petals" type="GPUParticles2D" parent="Sky" unique_id=616777844]
+position = Vector2(-406.99997, -265.00003)
+scale = Vector2(4.1875, 4.1874995)
 amount = 200
 texture = ExtResource("3_12vek")
 lifetime = 10.0
 preprocess = 30.0
 process_material = SubResource("ParticleProcessMaterial_5a6dn")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sky" unique_id=200500889]
-position = Vector2(0, -89.99999)
-scale = Vector2(3.5, 3.5)
+[node name="title card" type="Sprite2D" parent="." unique_id=971608616]
+z_index = 1
+position = Vector2(576, 321.29654)
+scale = Vector2(4.942248, 4.942248)
+texture = ExtResource("1_xsilq")
+
+[node name="goose_sprite" type="AnimatedSprite2D" parent="." unique_id=200500889]
+position = Vector2(576, 202.34467)
+scale = Vector2(4.731041, 4.731041)
 sprite_frames = SubResource("SpriteFrames_4w47j")
 autoplay = "default"
 frame_progress = 0.7802515
 
-[node name="Sprite2D3" type="Sprite2D" parent="Sky" unique_id=1792574728]
-position = Vector2(0, 162)
-scale = Vector2(4.1875005, 4.1875005)
+[node name="start_button" type="Button" parent="." unique_id=966097251]
+z_index = -1
+offset_left = 497.0
+offset_top = 431.0
+offset_right = 505.0
+offset_bottom = 439.0
+scale = Vector2(21.433483, 7.449004)
+script = ExtResource("5_crctu")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="start_button" unique_id=2111618627]
+z_index = 1
+position = Vector2(3.6858215, 5.4152374)
+scale = Vector2(0.26408923, 0.7598803)
+texture = ExtResource("2_12vek")
+
+[node name="quit_button" type="Button" parent="." unique_id=1356886759]
+z_index = -1
+offset_left = 492.0
+offset_top = 509.0
+offset_right = 500.0
+offset_bottom = 517.0
+scale = Vector2(21.433483, 7.449004)
+script = ExtResource("6_crctu")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="quit_button" unique_id=1792574728]
+z_index = 1
+position = Vector2(3.9191017, 4.561653)
+scale = Vector2(0.2640893, 0.7598804)
 texture = ExtResource("5_5a6dn")
+
+[connection signal="pressed" from="start_button" to="start_button" method="_on_pressed"]
+[connection signal="pressed" from="quit_button" to="quit_button" method="_on_pressed"]

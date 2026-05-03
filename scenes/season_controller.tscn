@@ -54,3 +54,5 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_aj62e")
 animation = &"spring"
 autoplay = "winter"
+
+[node name="Timer" type="Timer" parent="." unique_id=1506468503]

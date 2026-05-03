@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cayewvh386mlo" path="res://scenes/player.tscn" id="3_qxy0u"]
 [ext_resource type="PackedScene" uid="uid://b2haeh0vpbkww" path="res://scenes/sky.tscn" id="4_excbq"]
 [ext_resource type="PackedScene" uid="uid://cdsksi2n4eyfj" path="res://scenes/killzone.tscn" id="5_iav0o"]
-[ext_resource type="PackedScene" path="res://scenes/score.tscn" id="6_dnkej"]
+[ext_resource type="PackedScene" uid="uid://brsw35h7doxjk" path="res://scenes/score.tscn" id="6_dnkej"]
 [ext_resource type="PackedScene" uid="uid://dqmtby6fooixc" path="res://scenes/season_controller.tscn" id="7_mm8aj"]
 [ext_resource type="PackedScene" uid="uid://b01ysjg4xwbrd" path="res://scenes/blueSky.tscn" id="8_wtwp4"]
 [ext_resource type="PackedScene" uid="uid://bc264htw0afth" path="res://scenes/coin.tscn" id="9_dga24"]
