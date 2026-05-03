@@ -6,7 +6,10 @@ var time_taken: int = 0
 var is_winter: bool = false
 
 const ABILITY_COOLDOWN: int = 1
-
+const LEVEL_LIST: Array[String] = [
+	"res://scenes/levels/level_1.tscn",
+	"res://scenes/levels/level2.tscn"
+	]
 const LEVEL_COLORS: Array[String] = [
 	"ruby",
 	"topaz",
@@ -21,10 +24,7 @@ var ability_ready: bool = true
 
 var have_macguffin: bool = false
 
-const LEVEL_LIST: Array[String] = [
-	"res://scenes/levels/level_1.tscn",
-	"res://scenes/levels/level2.tscn"
-	]
+
 	
 func reset_level():
 	get_tree().reload_current_scene()
