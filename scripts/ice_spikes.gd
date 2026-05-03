@@ -7,6 +7,8 @@ extends Node2D
 func _ready():
 	game_manager.spring.connect(_on_game_manager_spring)
 	game_manager.winter.connect(_on_game_manager_winter)
+	anim.play("melted")
+	collision_shape_2d.disabled = true
 	
 func _on_game_manager_spring() -> void:
 	collision_shape_2d.disabled = true

@@ -1,9 +1,4 @@
 extends Node
-
-@onready var game_manager: Node = %GameManager
-func _ready():
-	game_manager.spring.connect(_on_game_manager_spring)
-	game_manager.winter.connect(_on_game_manager_winter)
 	
 var score: int = 0
 var level: int = 0
@@ -33,10 +28,4 @@ func reset_game():
 	have_macguffin = false
 	ability_ready = true
 	get_tree().change_scene_to_file("res://scenes/levels/main_menu.tscn")
-
-func _on_game_manager_spring() -> void:
-	is_winter = false
-	
-func _on_game_manager_winter() -> void:
-	is_winter = true
 	

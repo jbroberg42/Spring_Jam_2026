@@ -15,7 +15,9 @@ var is_carrot
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
 func _ready():
-	is_carrot = false
+	is_carrot = true
+	$AnimatedSprite2D.play("carrot")
+	$killzone/CollisionShape2D.disabled = true
 	#connect signals with code.  Otherwise you have to connect each mob manually.  Which sucks.
 	game_manager.spring.connect(_on_game_manager_spring)
 	game_manager.winter.connect(_on_game_manager_winter)

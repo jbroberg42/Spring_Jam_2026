@@ -70,6 +70,10 @@ region = Rect2(448, 0, 32, 32)
 atlas = ExtResource("2_e2mor")
 region = Rect2(480, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0i41"]
+atlas = ExtResource("4_v53y5")
+region = Rect2(0, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_e2mor"]
 atlas = ExtResource("2_6xhef")
 region = Rect2(0, 0, 32, 32)
@@ -191,6 +195,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_r0i41")
+}],
+"loop": false,
+"name": &"carrot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_e2mor")
 }, {
 "duration": 1.0,
@@ -258,8 +270,9 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=274215298]
 position = Vector2(0, -10)
 sprite_frames = SubResource("SpriteFrames_f723k")
-animation = &"resurrects"
+animation = &"carrot"
 autoplay = "default"
+frame_progress = 1.0
 flip_h = true
 
 [node name="killzone" parent="." unique_id=300587 instance=ExtResource("2_fw3vj")]
