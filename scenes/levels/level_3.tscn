@@ -118,7 +118,12 @@ position = Vector2(1328, -222)
 [node name="macguffin" parent="." unique_id=1568965753 instance=ExtResource("12_qi5uv")]
 position = Vector2(1392, -200)
 
+[node name="AnimatedSprite2D" parent="macguffin" index="1" unique_id=849245326]
+animation = &"emerald"
+autoplay = "emerald"
+
 [connection signal="spring" from="GameManager" to="mobs/waterfall" method="_on_game_manager_spring"]
 [connection signal="winter" from="GameManager" to="mobs/waterfall" method="_on_game_manager_winter"]
 
 [editable path="map_layers"]
+[editable path="macguffin"]

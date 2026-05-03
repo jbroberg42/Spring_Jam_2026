@@ -240,4 +240,9 @@ position = Vector2(1225, -330)
 [node name="macguffin" parent="." unique_id=340897352 instance=ExtResource("14_0y7y4")]
 position = Vector2(1260, 85)
 
+[node name="AnimatedSprite2D" parent="macguffin" index="1" unique_id=849245326]
+animation = &"indigo"
+autoplay = "indigo"
+
 [editable path="map_layers"]
+[editable path="macguffin"]

@@ -124,4 +124,9 @@ position = Vector2(1168, -101)
 [node name="macguffin" parent="." unique_id=1288286580 instance=ExtResource("13_r88tb")]
 position = Vector2(1394, -107)
 
+[node name="AnimatedSprite2D" parent="macguffin" index="1" unique_id=849245326]
+animation = &"topaz"
+autoplay = "topaz"
+
 [editable path="map_layers"]
+[editable path="macguffin"]

@@ -105,6 +105,9 @@ position = Vector2(767, 26)
 [node name="macguffin" parent="." unique_id=1547969775 instance=ExtResource("13_hsvsk")]
 position = Vector2(945, -9)
 
+[node name="AnimatedSprite2D" parent="macguffin" index="1" unique_id=849245326]
+autoplay = "blue"
+
 [node name="coins" type="Node" parent="." unique_id=1125279758]
 
 [node name="Coin" parent="coins" unique_id=1759638673 instance=ExtResource("14_fcb7b")]
@@ -132,3 +135,4 @@ position = Vector2(564, 35)
 position = Vector2(862, -17)
 
 [editable path="map_layers"]
+[editable path="macguffin"]
