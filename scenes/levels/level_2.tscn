@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://p4yhwp4qtcwy" path="res://scenes/iceSpikes.tscn" id="11_nt80m"]
 [ext_resource type="PackedScene" uid="uid://bc264htw0afth" path="res://scenes/coin.tscn" id="12_tv7cl"]
 [ext_resource type="PackedScene" uid="uid://b2nwmnujtsats" path="res://scenes/macguffin.tscn" id="13_r88tb"]
+[ext_resource type="PackedScene" uid="uid://3sn446dk7gpc" path="res://scenes/snow_pile.tscn" id="13_tv7cl"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
 distance = -2.0
@@ -127,6 +128,9 @@ position = Vector2(1394, -107)
 [node name="AnimatedSprite2D" parent="macguffin" index="1" unique_id=849245326]
 animation = &"topaz"
 autoplay = "topaz"
+
+[node name="snow_pile" parent="." unique_id=278830982 instance=ExtResource("13_tv7cl")]
+position = Vector2(1393, -112)
 
 [editable path="map_layers"]
 [editable path="macguffin"]

@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cdla4ro8ecejr" path="res://scenes/snowman.tscn" id="13_st48t"]
 [ext_resource type="PackedScene" uid="uid://p4yhwp4qtcwy" path="res://scenes/iceSpikes.tscn" id="14_dfn7m"]
 [ext_resource type="PackedScene" uid="uid://bc264htw0afth" path="res://scenes/coin.tscn" id="15_8rm7r"]
+[ext_resource type="PackedScene" uid="uid://3sn446dk7gpc" path="res://scenes/snow_pile.tscn" id="15_c64tk"]
 [ext_resource type="PackedScene" uid="uid://b2nwmnujtsats" path="res://scenes/macguffin.tscn" id="15_dfn7m"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
@@ -309,6 +310,9 @@ position = Vector2(576, -427)
 [node name="AnimatedSprite2D" parent="macguffin" index="1" unique_id=849245326]
 animation = &"silver"
 autoplay = "silver"
+
+[node name="snow_pile" parent="." unique_id=1475111472 instance=ExtResource("15_c64tk")]
+position = Vector2(576, -432)
 
 [editable path="map_layers"]
 [editable path="macguffin"]
