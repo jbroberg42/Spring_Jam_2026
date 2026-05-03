@@ -1,22 +1,37 @@
 [gd_scene format=3 uid="uid://b2nwmnujtsats"]
 
 [ext_resource type="Script" uid="uid://ppdvwm8dpm67" path="res://scripts/macguffin.gd" id="1_nfo6c"]
-[ext_resource type="Texture2D" uid="uid://dvl42vwwc6pdq" path="res://icon.svg" id="2_odbxc"]
+[ext_resource type="Texture2D" uid="uid://b2u7ql703ch7l" path="res://assets/sprites/7magicGems.png" id="2_nfo6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvuet"]
 size = Vector2(8, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odbxc"]
+atlas = ExtResource("2_nfo6c")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tsfvc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odbxc")
+}],
+"loop": true,
+"name": &"indigo",
+"speed": 5.0
+}]
 
 [node name="macguffin" type="Area2D" unique_id=1541742947]
 collision_mask = 2
 script = ExtResource("1_nfo6c")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1604170270]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_odbxc")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=701892352]
 scale = Vector2(3.0902138, 3.0902138)
 shape = SubResource("RectangleShape2D_kvuet")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=849245326]
+sprite_frames = SubResource("SpriteFrames_tsfvc")
+animation = &"indigo"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
