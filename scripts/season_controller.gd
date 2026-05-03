@@ -13,6 +13,11 @@ func _process(delta: float) -> void:
 		$Label.text = str(int($Timer.time_left+1))
 	elif $Timer.time_left < 1:
 		$Label.text = ""
+		
+	if GameState.is_winter:
+		$AnimatedSprite2D.play("winter")
+	else:
+		$AnimatedSprite2D.play("spring")
 
 #func _on_game_manager_spring() -> void:
 	#$AnimatedSprite2D.play("spring")

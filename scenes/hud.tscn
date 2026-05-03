@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c5jjj8b5b62c5"]
 
-[ext_resource type="PackedScene" uid="uid://brsw35h7doxjk" path="res://scenes/score.tscn" id="1_5ysmq"]
+[ext_resource type="PackedScene" path="res://scenes/score.tscn" id="1_5ysmq"]
 [ext_resource type="PackedScene" uid="uid://dqmtby6fooixc" path="res://scenes/season_controller.tscn" id="2_6fi6k"]
 [ext_resource type="PackedScene" uid="uid://cavboor0v3h27" path="res://scenes/gem_indicator.tscn" id="3_uo2fv"]
 
