@@ -7,11 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://cdsksi2n4eyfj" path="res://scenes/killzone.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://cdla4ro8ecejr" path="res://scenes/snowman.tscn" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://colt1wcbh05xx" path="res://scenes/flower.tscn" id="7_u5sy4"]
-[ext_resource type="PackedScene" uid="uid://b2nwmnujtsats" path="res://scenes/macguffin.tscn" id="10_kvpfn"]
-[ext_resource type="PackedScene" uid="uid://brsw35h7doxjk" path="res://scenes/score.tscn" id="10_vtaks"]
-[ext_resource type="PackedScene" uid="uid://7mpdft6otq21" path="res://scenes/dude_in_distress.tscn" id="11_dinhu"]
+[ext_resource type="PackedScene" path="res://scenes/macguffin.tscn" id="10_kvpfn"]
+[ext_resource type="PackedScene" path="res://scenes/score.tscn" id="10_vtaks"]
+[ext_resource type="PackedScene" path="res://scenes/dude_in_distress.tscn" id="11_dinhu"]
 [ext_resource type="PackedScene" uid="uid://dqmtby6fooixc" path="res://scenes/season_controller.tscn" id="11_kvpfn"]
-[ext_resource type="PackedScene" uid="uid://cfomb8c2y7xbr" path="res://scenes/waterfall.tscn" id="12_dinhu"]
+[ext_resource type="PackedScene" path="res://scenes/waterfall.tscn" id="12_dinhu"]
+[ext_resource type="PackedScene" uid="uid://b2haeh0vpbkww" path="res://scenes/sky.tscn" id="13_kvuet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
 texture = ExtResource("3_vtaks")
@@ -286,6 +287,9 @@ position = Vector2(-95, 46)
 
 [node name="waterfall" parent="." unique_id=109474915 instance=ExtResource("12_dinhu")]
 position = Vector2(128, 64)
+
+[node name="Sky" parent="." unique_id=1797930561 instance=ExtResource("13_kvuet")]
+position = Vector2(206, 33)
 
 [connection signal="spring" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_spring"]
 [connection signal="winter" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_winter"]

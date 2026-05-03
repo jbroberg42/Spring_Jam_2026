@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b2haeh0vpbkww"]
 
 [ext_resource type="Script" uid="uid://bdty53lvxvbbc" path="res://scripts/sky.gd" id="1_k1tqj"]
-[ext_resource type="Texture2D" uid="uid://dhfjjca0bjjmr" path="res://assets/sprites/Flower petal.png" id="2_qk45w"]
 
 [sub_resource type="Curve" id="Curve_2gxki"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.6966307, 0.0, 0, 0]
@@ -28,20 +27,6 @@ turbulence_enabled = true
 turbulence_influence_min = 0.032
 turbulence_influence_max = 0.126
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_k1tqj"]
-particle_flag_disable_z = true
-emission_shape = 3
-emission_box_extents = Vector3(500, 1, 1)
-angular_velocity_min = -1.6093254e-05
-angular_velocity_max = 194.58998
-gravity = Vector3(-100, 50, 0)
-scale_min = 0.5
-color_initial_ramp = SubResource("GradientTexture1D_3hy4n")
-alpha_curve = SubResource("CurveTexture_k1tqj")
-turbulence_enabled = true
-turbulence_influence_min = 0.032
-turbulence_influence_max = 0.11800001
-
 [sub_resource type="Gradient" id="Gradient_u5sy4"]
 offsets = PackedFloat32Array(0, 0.18992248, 1)
 colors = PackedColorArray(0.0010427046, 0.2865209, 0.9486757, 1, 0, 0.46601117, 0.9458347, 1, 0.6012984, 0.8632337, 0.99999994, 1)
@@ -63,24 +48,10 @@ repeat_times = 3
 
 [node name="Snow" type="GPUParticles2D" parent="FogParallax2D2" unique_id=510265344]
 position = Vector2(0, -155.89)
-amount = 100
+amount = 200
 lifetime = 10.0
 preprocess = 30.0
 process_material = SubResource("ParticleProcessMaterial_2gxki")
-
-[node name="FogParallax2D3" type="Parallax2D" parent="." unique_id=1490900010]
-scroll_scale = Vector2(1.5, 1)
-repeat_size = Vector2(512, 0)
-autoscroll = Vector2(-25, 0)
-repeat_times = 3
-
-[node name="Petals" type="GPUParticles2D" parent="FogParallax2D3" unique_id=60450449]
-position = Vector2(0, -155.89)
-amount = 200
-texture = ExtResource("2_qk45w")
-lifetime = 10.0
-preprocess = 30.0
-process_material = SubResource("ParticleProcessMaterial_k1tqj")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=801072668]
 z_index = -1
