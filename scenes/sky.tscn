@@ -42,16 +42,6 @@ turbulence_enabled = true
 turbulence_influence_min = 0.032
 turbulence_influence_max = 0.11800001
 
-[sub_resource type="Gradient" id="Gradient_u5sy4"]
-offsets = PackedFloat32Array(0, 0.18992248, 1)
-colors = PackedColorArray(0.0010427046, 0.2865209, 0.9486757, 1, 0, 0.46601117, 0.9458347, 1, 0.6012984, 0.8632337, 0.99999994, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_v26od"]
-gradient = SubResource("Gradient_u5sy4")
-width = 512
-height = 512
-fill_to = Vector2(0, 1)
-
 [node name="Sky" type="Node2D" unique_id=1797930561]
 script = ExtResource("1_k1tqj")
 
@@ -79,13 +69,3 @@ texture = ExtResource("2_qk45w")
 lifetime = 10.0
 preprocess = 30.0
 process_material = SubResource("ParticleProcessMaterial_k1tqj")
-
-[node name="Parallax2D" type="Parallax2D" parent="." unique_id=801072668]
-visible = false
-z_index = -1
-scroll_scale = Vector2(0, 0)
-repeat_times = 3
-
-[node name="Sky" type="Sprite2D" parent="Parallax2D" unique_id=1544608370]
-visible = false
-texture = SubResource("GradientTexture2D_v26od")
