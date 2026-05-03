@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://3sn446dk7gpc"]
 
-[ext_resource type="Script" uid="uid://bprdhaf3cohth" path="res://scripts/ice_spikes.gd" id="1_qrnr7"]
+[ext_resource type="Script" uid="uid://dbd6yrcc7bs00" path="res://scripts/snow_pile.gd" id="1_qrnr7"]
 [ext_resource type="Texture2D" uid="uid://c5pn3spyhvhij" path="res://assets/sprites/IceSpikes.png" id="2_2cxqo"]
 [ext_resource type="Texture2D" uid="uid://b4ye2ydohhns2" path="res://assets/sprites/SnowPileMelting.png" id="2_qrnr7"]
 
@@ -102,10 +102,4 @@ script = ExtResource("1_qrnr7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=75130975]
 sprite_frames = SubResource("SpriteFrames_30q5p")
-animation = &"melted"
 autoplay = "default"
-
-[node name="Timer" type="Timer" parent="." unique_id=324429055]
-one_shot = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
