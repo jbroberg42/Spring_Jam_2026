@@ -128,7 +128,7 @@ shape = SubResource("RectangleShape2D_cwatv")
 metadata/_edit_group_ = true
 
 [node name="Timer" type="Timer" parent="." unique_id=1844677106]
-wait_time = 0.038
+wait_time = 0.421
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
