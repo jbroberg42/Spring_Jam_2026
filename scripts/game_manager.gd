@@ -10,6 +10,7 @@ func add_score(amount: int):
 	score.text = str(GameState.score)
 	
 func load_next_level():
+	GameState.have_macguffin = false
 	get_tree().change_scene_to_file(GameState.LEVEL_LIST[GameState.level + 1])
 	GameState.level += 1
 	spring.emit()

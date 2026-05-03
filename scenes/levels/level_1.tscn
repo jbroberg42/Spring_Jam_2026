@@ -4,10 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bhckluo7277nc" path="res://scenes/map_layers.tscn" id="2_dga24"]
 [ext_resource type="PackedScene" uid="uid://cayewvh386mlo" path="res://scenes/player.tscn" id="3_qxy0u"]
 [ext_resource type="PackedScene" uid="uid://b2haeh0vpbkww" path="res://scenes/sky.tscn" id="4_excbq"]
+[ext_resource type="PackedScene" uid="uid://c5jjj8b5b62c5" path="res://scenes/hud.tscn" id="5_dnkej"]
 [ext_resource type="PackedScene" uid="uid://cdsksi2n4eyfj" path="res://scenes/killzone.tscn" id="5_iav0o"]
-[ext_resource type="PackedScene" path="res://scenes/score.tscn" id="6_dnkej"]
-[ext_resource type="PackedScene" uid="uid://dqmtby6fooixc" path="res://scenes/season_controller.tscn" id="7_mm8aj"]
-[ext_resource type="PackedScene" path="res://scenes/gem_indicator.tscn" id="8_mm8aj"]
 [ext_resource type="PackedScene" uid="uid://b01ysjg4xwbrd" path="res://scenes/blueSky.tscn" id="8_wtwp4"]
 [ext_resource type="PackedScene" uid="uid://bc264htw0afth" path="res://scenes/coin.tscn" id="9_dga24"]
 [ext_resource type="PackedScene" uid="uid://7mpdft6otq21" path="res://scenes/dude_in_distress.tscn" id="9_qxy0u"]
@@ -46,38 +44,14 @@ position_smoothing_enabled = true
 
 [node name="Sky" parent="Player/Camera2D" unique_id=1797930561 instance=ExtResource("4_excbq")]
 
+[node name="HUD" parent="." unique_id=1730292578 instance=ExtResource("5_dnkej")]
+
 [node name="killzone" parent="." unique_id=300587 instance=ExtResource("5_iav0o")]
 position = Vector2(23, 59)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=259522311]
 position = Vector2(165, 40)
 shape = SubResource("WorldBoundaryShape2D_p57ef")
-
-[node name="HUD" type="CanvasLayer" parent="." unique_id=1081156825]
-
-[node name="Control" type="Control" parent="HUD" unique_id=918203041]
-layout_mode = 3
-anchor_left = 0.05
-anchor_top = 0.1
-anchor_right = 0.068
-anchor_bottom = 0.107
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Control" unique_id=1374680731]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_constants/separation = 60
-
-[node name="Score" parent="HUD/Control/VBoxContainer" unique_id=1416161994 instance=ExtResource("6_dnkej")]
-layout_mode = 2
-
-[node name="Season_controller" parent="HUD/Control/VBoxContainer" unique_id=2054882766 instance=ExtResource("7_mm8aj")]
-layout_mode = 2
-
-[node name="gem_indicator" parent="HUD/Control/VBoxContainer" unique_id=887685911 instance=ExtResource("8_mm8aj")]
-layout_mode = 2
 
 [node name="BlueSky" parent="." unique_id=2020679628 instance=ExtResource("8_wtwp4")]
 scale = Vector2(2.5236473, 1.3322281)
@@ -100,6 +74,9 @@ position = Vector2(688, 0)
 [node name="macguffin" parent="." unique_id=1728568913 instance=ExtResource("11_dnkej")]
 position = Vector2(1553, -138)
 
+[node name="AnimatedSprite2D" parent="macguffin" index="1" unique_id=849245326]
+animation = &"ruby"
+
 [node name="coins" type="Node" parent="." unique_id=65055093]
 
 [node name="Coin" parent="coins" unique_id=1759638673 instance=ExtResource("9_dga24")]
@@ -112,17 +89,15 @@ position = Vector2(367, -108)
 
 [node name="Label" type="Label" parent="InGameText" unique_id=596966260]
 texture_filter = 1
-offset_left = 472.0
-offset_top = -145.0
-offset_right = 846.0
-offset_bottom = -122.0
+offset_left = 415.0
+offset_top = -81.0
+offset_right = 789.0
+offset_bottom = -58.0
 theme_override_colors/font_color = Color(0, 0.9331464, 0.5106038, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.6666667)
 theme_override_fonts/font = ExtResource("12_iav0o")
 theme_override_font_sizes/font_size = 13
 text = "Press E to switch seasons!"
 
-[connection signal="spring" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_spring"]
-[connection signal="winter" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_winter"]
-
 [editable path="map_layers"]
+[editable path="macguffin"]

@@ -24,4 +24,5 @@ func _on_game_manager_winter() -> void:
 	$AnimatedSprite2D.play("freezing")
 
 func _on_timer_timeout() -> void:
-	$AnimatedSprite2D.play("flowing")
+	if !GameState.is_winter:
+		$AnimatedSprite2D.play("flowing")

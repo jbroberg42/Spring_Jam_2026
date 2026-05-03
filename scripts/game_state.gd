@@ -11,8 +11,9 @@ const LEVEL_LIST: Array[String] = [
 	"res://scenes/levels/level_2.tscn",
 	"res://scenes/levels/level_3.tscn",
 	"res://scenes/levels/level_4.tscn",
-	"res://scenes/levels/level_5.tscn"
-	
+	"res://scenes/levels/level_5.tscn",
+	"res://scenes/levels/level_6.tscn",
+	"res://scenes/levels/level_7.tscn"
 	]
 const LEVEL_COLORS: Array[String] = [
 	"ruby",

@@ -111,7 +111,7 @@ script = ExtResource("1_5yo30")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1191256091]
 sprite_frames = SubResource("SpriteFrames_t0vxg")
-animation = &"melting"
+animation = &"freezing"
 autoplay = "flowing"
 
 [node name="killzone" parent="." unique_id=300587 instance=ExtResource("4_vbqhg")]
