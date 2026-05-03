@@ -22,7 +22,6 @@ func _on_game_manager_spring() -> void:
 func _on_game_manager_winter() -> void:
 	$killzone/CollisionShape2D.disabled = true
 	$AnimatedSprite2D.play("freezing")
-	print("here")
 
 func _on_timer_timeout() -> void:
 	$AnimatedSprite2D.play("flowing")
