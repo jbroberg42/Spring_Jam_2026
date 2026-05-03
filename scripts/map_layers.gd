@@ -15,9 +15,12 @@ func _ready():
 	
 	
 func _on_game_manager_spring() -> void:
-	$winter_layer.hide()
-	$spring_layer.show()
+	$spring_layer.enabled = true
+	$winter_layer.enabled = false
+
 		
 func _on_game_manager_winter() -> void:
-	$winter_layer.show()
-	$spring_layer.hide()
+	$winter_layer.enabled = true
+	$spring_layer.enabled = false
+	
+	

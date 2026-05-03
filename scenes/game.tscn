@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cfomb8c2y7xbr" path="res://scenes/waterfall.tscn" id="12_dinhu"]
 [ext_resource type="PackedScene" uid="uid://b2haeh0vpbkww" path="res://scenes/sky.tscn" id="13_kvuet"]
 [ext_resource type="PackedScene" uid="uid://b01ysjg4xwbrd" path="res://scenes/blueSky.tscn" id="14_trtic"]
-[ext_resource type="PackedScene" uid="uid://bk5kjhu5jih5s" path="res://scenes/iceSpikes.tscn" id="15_ir15t"]
+[ext_resource type="PackedScene" path="res://scenes/iceSpikes.tscn" id="15_ir15t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
 texture = ExtResource("3_vtaks")
