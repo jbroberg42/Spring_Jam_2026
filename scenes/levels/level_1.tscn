@@ -143,4 +143,5 @@ autowrap_mode = 2
 position = Vector2(1552, -144)
 
 [editable path="map_layers"]
+[editable path="HUD"]
 [editable path="macguffin"]

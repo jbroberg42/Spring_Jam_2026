@@ -1,78 +1,122 @@
-[gd_scene format=3 uid="uid://bmipyi4i4p3b4"]
+[gd_scene format=4 uid="uid://bmipyi4i4p3b4"]
 
-[ext_resource type="Texture2D" uid="uid://dhfjjca0bjjmr" path="res://assets/sprites/Flower petal.png" id="1_n5qyp"]
+[ext_resource type="PackedScene" uid="uid://cgphpsr53so7u" path="res://scenes/game_manager.tscn" id="1_wjny8"]
+[ext_resource type="PackedScene" uid="uid://bhckluo7277nc" path="res://scenes/map_layers.tscn" id="2_mhf2t"]
+[ext_resource type="Texture2D" uid="uid://b3n1bm8l40vvq" path="res://assets/sprites/note.png" id="2_obla8"]
+[ext_resource type="PackedScene" uid="uid://cayewvh386mlo" path="res://scenes/player.tscn" id="3_7305q"]
+[ext_resource type="PackedScene" uid="uid://b2haeh0vpbkww" path="res://scenes/sky.tscn" id="4_tpn7h"]
+[ext_resource type="PackedScene" uid="uid://cdsksi2n4eyfj" path="res://scenes/killzone.tscn" id="5_lnyp3"]
+[ext_resource type="PackedScene" uid="uid://brsw35h7doxjk" path="res://scenes/score.tscn" id="6_li764"]
+[ext_resource type="PackedScene" uid="uid://dqmtby6fooixc" path="res://scenes/season_controller.tscn" id="7_3og8d"]
+[ext_resource type="Texture2D" uid="uid://jl3y1xkqnqa5" path="res://assets/sprites/quit.png" id="7_lnyp3"]
+[ext_resource type="PackedScene" uid="uid://cavboor0v3h27" path="res://scenes/gem_indicator.tscn" id="8_d8gdx"]
+[ext_resource type="PackedScene" uid="uid://b01ysjg4xwbrd" path="res://scenes/blueSky.tscn" id="9_a8uij"]
+[ext_resource type="Texture2D" uid="uid://bi5ecyp2elgcp" path="res://assets/sprites/restartt.png" id="12_tpn7h"]
+[ext_resource type="PackedScene" uid="uid://dbarysm8egy83" path="res://scenes/selection_gem_restart.tscn" id="13_li764"]
+[ext_resource type="PackedScene" uid="uid://bsj2l3p21q5t5" path="res://scenes/selection_gem_quit.tscn" id="13_lnyp3"]
+[ext_resource type="Script" uid="uid://im7jtbheh658" path="res://scripts/selection_gem_restart.gd" id="14_3og8d"]
 
-[sub_resource type="Gradient" id="Gradient_u5sy4"]
-offsets = PackedFloat32Array(0, 0.18992248, 1)
-colors = PackedColorArray(0.0010427046, 0.2865209, 0.9486757, 1, 0, 0.46601117, 0.9458347, 1, 0.6012984, 0.8632337, 0.99999994, 1)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
+distance = -2.0
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_v26od"]
-gradient = SubResource("Gradient_u5sy4")
-width = 512
-height = 512
-fill_to = Vector2(0, 1)
+[node name="level0" type="Node2D" unique_id=874965567]
 
-[sub_resource type="Curve" id="Curve_vsw8r"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.6966307, 0.0, 0, 0]
-point_count = 2
+[node name="GameManager" parent="." unique_id=1990519776 instance=ExtResource("1_wjny8")]
+unique_name_in_owner = true
 
-[sub_resource type="CurveTexture" id="CurveTexture_k1tqj"]
-curve = SubResource("Curve_vsw8r")
+[node name="map_layers" parent="." unique_id=906720902 instance=ExtResource("2_mhf2t")]
 
-[sub_resource type="Gradient" id="Gradient_km7eu"]
-colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+[node name="winter_layer" parent="map_layers" index="0" unique_id=608528123]
+tile_map_data = PackedByteArray("AAD+/wEAAQAVAA4AAAD//wEAAQAWAA4AAAAAAAEAAQAWAA4AAAABAAEAAQAWAA4AAAACAAEAAQAWAA4AAAABAAIAAQAWAA8AAAAAAAIAAQAWAA8AAAD//wIAAQAWAA8AAAAAAAMAAQAWAA8AAAABAAMAAQAWAA8AAAD//wMAAQAWAA8AAAABAAQAAQAWAA8AAAAAAAQAAQAWAA8AAAD//wQAAQAWAA8AAAACAAIAAQAWAA8AAAACAAMAAQAWAA8AAAACAAQAAQAWAA8AAAD+/wIAAQAVAA8AAAD+/wMAAQAVAA8AAAD+/wQAAQAVAA8AAAD+/wUAAQAVAA8AAAD//wUAAQAWAA8AAAAAAAUAAQAWAA8AAAABAAUAAQAWAA8AAAACAAUAAQAWAA8AAAADAAUAAQAXAA8AAAADAAEAAQAXAA4AAAADAAIAAQAXAA8AAAADAAMAAQAXAA8AAAADAAQAAQAXAA8AAAAGAAEAAQAWAA4AAAAGAAIAAQAWAA8AAAAHAAEAAQAXAA4AAAAHAAIAAQAXAA8AAAD6/wEAAQAVAA4AAAD6/wIAAQAVAA8AAAD7/wEAAQAWAA4AAAD7/wIAAQAWAA8AAAD8/wEAAQAXAA4AAAD8/wIAAQAXAA8AAAAFAAEAAQAVAA4AAAAFAAIAAQAVAA8AAAAFAAMAAQAVAA8AAAAGAAMAAQAWAA8AAAAHAAMAAQAXAA8AAAAFAAQAAQAVAA8AAAAGAAQAAQAWAA8AAAAHAAQAAQAXAA8AAAAFAAUAAQAVAA8AAAAGAAUAAQAWAA8AAAAHAAUAAQAXAA8AAAAFAAYAAQAVAA8AAAAGAAYAAQAWAA8AAAAHAAYAAQAXAA8AAAD6/wMAAQAVAA8AAAD7/wMAAQAWAA8AAAD8/wMAAQAXAA8AAAD6/wQAAQAVAA8AAAD7/wQAAQAWAA8AAAD8/wQAAQAXAA8AAAD6/wUAAQAVAA8AAAD7/wUAAQAWAA8AAAD8/wUAAQAXAA8AAAD6/wYAAQAVAA8AAAD7/wYAAQAWAA8AAAD8/wYAAQAXAA8AAAABAAYAAQAWAA8AAAACAAYAAQAWAA8AAAADAAYAAQAXAA8AAAD+/wYAAQAVAA8AAAD//wYAAQAWAA8AAAAAAAYAAQAWAA8AAAA=")
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_3hy4n"]
-gradient = SubResource("Gradient_km7eu")
+[node name="spring_layer" parent="map_layers" index="1" unique_id=698821074]
+tile_map_data = PackedByteArray("AAD+/wEAAwAVAA4AAAD//wEAAwAWAA4AAAAAAAEAAwAWAA4AAAABAAEAAwAWAA4AAAACAAEAAwAWAA4AAAD+/wIAAwAVAA8AAAD+/wMAAwAVAA8AAAD+/wQAAwAVAA8AAAD+/wUAAwAVAA8AAAADAAEAAwAXAA4AAAADAAIAAwAXAA8AAAADAAMAAwAXAA8AAAADAAQAAwAXAA8AAAADAAUAAwAXAA8AAAD//wIAAwAWAA8AAAD//wMAAwAWAA8AAAD//wQAAwAWAA8AAAAAAAQAAwAWAA8AAAAAAAUAAwAWAA8AAAABAAUAAwAWAA8AAAACAAUAAwAWAA8AAAACAAQAAwAWAA8AAAACAAMAAwAWAA8AAAACAAIAAwAWAA8AAAABAAIAAwAWAA8AAAAAAAIAAwAWAA8AAAAAAAMAAwAWAA8AAAABAAMAAwAWAA8AAAABAAQAAwAWAA8AAAD//wUAAwAWAA8AAAAFAAEAAwAVAA4AAAAFAAIAAwAVAA8AAAAGAAEAAwAWAA4AAAAGAAIAAwAWAA8AAAAHAAEAAwAXAA4AAAAHAAIAAwAXAA8AAAD6/wEAAwAVAA4AAAD6/wIAAwAVAA8AAAD7/wEAAwAWAA4AAAD7/wIAAwAWAA8AAAD8/wEAAwAXAA4AAAD8/wIAAwAXAA8AAAAFAAMAAwAVAA8AAAAGAAMAAwAWAA8AAAAHAAMAAwAXAA8AAAAFAAQAAwAVAA8AAAAGAAQAAwAWAA8AAAAHAAQAAwAXAA8AAAAFAAUAAwAVAA8AAAAGAAUAAwAWAA8AAAAHAAUAAwAXAA8AAAAFAAYAAwAVAA8AAAAGAAYAAwAWAA8AAAAHAAYAAwAXAA8AAAD6/wMAAwAVAA8AAAD7/wMAAwAWAA8AAAD8/wMAAwAXAA8AAAD6/wQAAwAVAA8AAAD7/wQAAwAWAA8AAAD8/wQAAwAXAA8AAAD6/wUAAwAVAA8AAAD7/wUAAwAWAA8AAAD8/wUAAwAXAA8AAAD6/wYAAwAVAA8AAAD7/wYAAwAWAA8AAAD8/wYAAwAXAA8AAAD+/wYAAwAVAA8AAAD//wYAAwAWAA8AAAAAAAYAAwAWAA8AAAABAAYAAwAWAA8AAAACAAYAAwAWAA8AAAADAAYAAwAXAA8AAAA=")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vsw8r"]
-particle_flag_disable_z = true
-emission_shape = 3
-emission_box_extents = Vector3(100, 1, 1)
-gravity = Vector3(-45, 98, 0)
-scale_max = 4.0
-color_initial_ramp = SubResource("GradientTexture1D_3hy4n")
-alpha_curve = SubResource("CurveTexture_k1tqj")
-turbulence_enabled = true
-turbulence_influence_min = 0.032
-turbulence_influence_max = 0.126
+[node name="Player" parent="." unique_id=1867319898 instance=ExtResource("3_7305q")]
+position = Vector2(24, -7)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5a6dn"]
-particle_flag_disable_z = true
-emission_shape = 3
-emission_box_extents = Vector3(100, 1, 1)
-angular_velocity_min = -1.6093254e-05
-angular_velocity_max = 194.58998
-gravity = Vector3(-10, 98, 0)
-scale_min = 0.5
-color_initial_ramp = SubResource("GradientTexture1D_3hy4n")
-alpha_curve = SubResource("CurveTexture_k1tqj")
-turbulence_enabled = true
-turbulence_influence_min = 0.032
-turbulence_influence_max = 0.11800001
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=220398274]
+position = Vector2(0, -40.03)
+zoom = Vector2(4, 4)
+limit_left = -9999946
+limit_top = -9999998
+limit_right = 10000054
+limit_bottom = 122
+limit_smoothed = true
+position_smoothing_enabled = true
 
-[node name="win_screen" type="Node" unique_id=859340806]
+[node name="Sky" parent="Player/Camera2D" unique_id=1797930561 instance=ExtResource("4_tpn7h")]
 
-[node name="Sky" type="Sprite2D" parent="." unique_id=1169360015]
-position = Vector2(576, 324)
-scale = Vector2(2.302527, 1.3416358)
-texture = SubResource("GradientTexture2D_v26od")
+[node name="killzone" parent="." unique_id=300587 instance=ExtResource("5_lnyp3")]
+position = Vector2(23, 59)
 
-[node name="Snow" type="GPUParticles2D" parent="Sky" unique_id=1686797525]
-position = Vector2(492.99997, -269)
-scale = Vector2(4.1875, 4.1874995)
-amount = 100
-lifetime = 10.0
-preprocess = 30.0
-process_material = SubResource("ParticleProcessMaterial_vsw8r")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=259522311]
+position = Vector2(165, 40)
+shape = SubResource("WorldBoundaryShape2D_p57ef")
 
-[node name="Petals" type="GPUParticles2D" parent="Sky" unique_id=616777844]
-position = Vector2(-406.99997, -265.00003)
-scale = Vector2(4.1875, 4.1874995)
-amount = 200
-texture = ExtResource("1_n5qyp")
-lifetime = 10.0
-preprocess = 30.0
-process_material = SubResource("ParticleProcessMaterial_5a6dn")
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1081156825]
+visible = false
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1959367202]
+[node name="Control" type="Control" parent="HUD" unique_id=918203041]
+layout_mode = 3
+anchor_left = 0.05
+anchor_top = 0.1
+anchor_right = 0.068
+anchor_bottom = 0.107
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Control" unique_id=1374680731]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 60
+
+[node name="Score" parent="HUD/Control/VBoxContainer" unique_id=1416161994 instance=ExtResource("6_li764")]
+layout_mode = 2
+
+[node name="Season_controller" parent="HUD/Control/VBoxContainer" unique_id=2054882766 instance=ExtResource("7_3og8d")]
+layout_mode = 2
+
+[node name="gem_indicator" parent="HUD/Control/VBoxContainer" unique_id=850160028 instance=ExtResource("8_d8gdx")]
+layout_mode = 2
+
+[node name="BlueSky" parent="." unique_id=2020679628 instance=ExtResource("9_a8uij")]
+scale = Vector2(2.5236473, 1.3322281)
+scroll_offset = Vector2(583.00006, 317)
+
+[node name="mobs" type="Node" parent="." unique_id=684075897]
+
+[node name="coins" type="Node" parent="." unique_id=1125279758]
+
+[node name="win_note" type="Sprite2D" parent="." unique_id=1925406022]
+position = Vector2(23, -31)
+texture = ExtResource("2_obla8")
+
+[node name="Quit_platform" type="Sprite2D" parent="." unique_id=499579935]
+position = Vector2(208, 27)
+texture = ExtResource("7_lnyp3")
+
+[node name="restart_platform" type="Sprite2D" parent="." unique_id=1347604939]
+position = Vector2(-144, 27)
+texture = ExtResource("12_tpn7h")
+
+[node name="selection_gem_restart" parent="." unique_id=1541742947 instance=ExtResource("13_li764")]
+position = Vector2(-144, 9)
+script = ExtResource("14_3og8d")
+
+[node name="AnimatedSprite2D" parent="selection_gem_restart" index="1" unique_id=849245326]
+animation = &"emerald"
+
+[node name="selection_gem_quit" parent="." unique_id=798932652 instance=ExtResource("13_lnyp3")]
+position = Vector2(208, 9)
+
+[node name="AnimatedSprite2D" parent="selection_gem_quit" index="1" unique_id=849245326]
+animation = &"ruby"
+
+[connection signal="spring" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_spring"]
+[connection signal="winter" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_winter"]
+
+[editable path="map_layers"]
+[editable path="selection_gem_restart"]
+[editable path="selection_gem_quit"]
