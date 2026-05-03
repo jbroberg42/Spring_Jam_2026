@@ -53,19 +53,6 @@ lifetime = 10.0
 preprocess = 30.0
 process_material = SubResource("ParticleProcessMaterial_2gxki")
 
-[node name="FogParallax2D3" type="Parallax2D" parent="." unique_id=1490900010]
-scroll_scale = Vector2(1.5, 1)
-repeat_size = Vector2(512, 0)
-autoscroll = Vector2(-25, 0)
-repeat_times = 3
-
-[node name="Petals" type="GPUParticles2D" parent="FogParallax2D3" unique_id=60450449]
-position = Vector2(0, -155.89)
-amount = 200
-lifetime = 10.0
-preprocess = 30.0
-process_material = SubResource("ParticleProcessMaterial_2gxki")
-
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=801072668]
 z_index = -1
 scroll_scale = Vector2(0, 1)
