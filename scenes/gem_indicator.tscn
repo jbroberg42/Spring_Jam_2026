@@ -1,40 +1,37 @@
-[gd_scene format=3 uid="uid://b2nwmnujtsats"]
+[gd_scene format=3 uid="uid://cavboor0v3h27"]
 
-[ext_resource type="Script" uid="uid://ppdvwm8dpm67" path="res://scripts/macguffin.gd" id="1_nfo6c"]
-[ext_resource type="Texture2D" uid="uid://b2u7ql703ch7l" path="res://assets/sprites/7magicGems.png" id="2_nfo6c"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvuet"]
-size = Vector2(8, 7)
+[ext_resource type="Script" uid="uid://h6da2v2cxk4e" path="res://scripts/gem_indicator.gd" id="1_ycxy7"]
+[ext_resource type="Texture2D" uid="uid://b2u7ql703ch7l" path="res://assets/sprites/7magicGems.png" id="2_ycxy7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nfo6c"]
-atlas = ExtResource("2_nfo6c")
+atlas = ExtResource("2_ycxy7")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tsfvc"]
-atlas = ExtResource("2_nfo6c")
+atlas = ExtResource("2_ycxy7")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_odbxc"]
-atlas = ExtResource("2_nfo6c")
+atlas = ExtResource("2_ycxy7")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ixhxf"]
-atlas = ExtResource("2_nfo6c")
+atlas = ExtResource("2_ycxy7")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3uf5b"]
-atlas = ExtResource("2_nfo6c")
+atlas = ExtResource("2_ycxy7")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aflcd"]
-atlas = ExtResource("2_nfo6c")
+atlas = ExtResource("2_ycxy7")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3mucm"]
-atlas = ExtResource("2_nfo6c")
+atlas = ExtResource("2_ycxy7")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_tsfvc"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_kyh82"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -93,17 +90,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="macguffin" type="Area2D" unique_id=1541742947]
-collision_mask = 2
-script = ExtResource("1_nfo6c")
-metadata/_edit_group_ = true
+[node name="gem_indicator" type="Control" unique_id=1416161994]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ycxy7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=701892352]
-scale = Vector2(3.0902138, 3.0902138)
-shape = SubResource("RectangleShape2D_kvuet")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=849245326]
-sprite_frames = SubResource("SpriteFrames_tsfvc")
-animation = &"blue"
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1106516240]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_kyh82")
+animation = &"silver"

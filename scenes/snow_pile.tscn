@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://3sn446dk7gpc"]
+
+[ext_resource type="Script" uid="uid://bprdhaf3cohth" path="res://scripts/ice_spikes.gd" id="1_qrnr7"]
+[ext_resource type="Texture2D" uid="uid://c5pn3spyhvhij" path="res://assets/sprites/IceSpikes.png" id="2_2cxqo"]
+[ext_resource type="Texture2D" uid="uid://b4ye2ydohhns2" path="res://assets/sprites/SnowPileMelting.png" id="2_qrnr7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cxqo"]
+atlas = ExtResource("2_qrnr7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42k0m"]
+atlas = ExtResource("2_qrnr7")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qtnv"]
+atlas = ExtResource("2_qrnr7")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83f72"]
+atlas = ExtResource("2_qrnr7")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bp78"]
+atlas = ExtResource("2_qrnr7")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rywml"]
+atlas = ExtResource("2_qrnr7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gj5mc"]
+atlas = ExtResource("2_2cxqo")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_30q5p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cxqo")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42k0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qtnv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83f72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bp78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rywml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cxqo")
+}],
+"loop": false,
+"name": &"freeze",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cxqo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rywml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bp78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83f72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qtnv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42k0m")
+}],
+"loop": false,
+"name": &"melt",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gj5mc")
+}],
+"loop": false,
+"name": &"melted",
+"speed": 5.0
+}]
+
+[node name="snow_pile" type="Node2D" unique_id=1627656771]
+script = ExtResource("1_qrnr7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=75130975]
+sprite_frames = SubResource("SpriteFrames_30q5p")
+animation = &"melted"
+autoplay = "default"
+
+[node name="Timer" type="Timer" parent="." unique_id=324429055]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -10,7 +10,10 @@ func add_score(amount: int):
 	score.text = str(GameState.score)
 	
 func load_next_level():
-	get_tree().change_scene_to_file(GameState.level_list[GameState.level + 1])
+	get_tree().change_scene_to_file(GameState.LEVEL_LIST[GameState.level + 1])
+	GameState.level += 1
+	spring.emit()
+	GameState.is_winter = false
 	
 func switch_seasons():
 	GameState.is_winter = !GameState.is_winter
