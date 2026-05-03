@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bsj2l3p21q5t5" path="res://scenes/selection_gem_quit.tscn" id="13_lnyp3"]
 [ext_resource type="Script" uid="uid://im7jtbheh658" path="res://scripts/selection_gem_restart.gd" id="14_3og8d"]
 [ext_resource type="AudioStream" uid="uid://5r61rnucqig2" path="res://assets/sounds/Ice-Road-Sunrise.mp3" id="16_d8gdx"]
+[ext_resource type="FontFile" uid="uid://oa86o88dekdm" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="17_a8uij"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
 distance = -2.0
@@ -118,6 +119,26 @@ animation = &"ruby"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=568985010]
 stream = ExtResource("16_d8gdx")
 autoplay = true
+
+[node name="Label" type="Label" parent="AudioStreamPlayer" unique_id=1440311615]
+texture_filter = 1
+offset_left = -59.0
+offset_top = 19.0
+offset_right = 315.0
+offset_bottom = 118.0
+scale = Vector2(0.5033364, 0.5033364)
+theme_override_colors/font_color = Color(0, 0.9331464, 0.5106038, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.6666667)
+theme_override_fonts/font = ExtResource("17_a8uij")
+theme_override_font_sizes/font_size = 13
+text = "Thank you for playing our game!
+
+
+Created by
+Jonah Broberg
+Parker Broberg"
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [connection signal="spring" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_spring"]
 [connection signal="winter" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_winter"]
