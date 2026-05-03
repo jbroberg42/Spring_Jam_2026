@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cdsksi2n4eyfj" path="res://scenes/killzone.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://cdla4ro8ecejr" path="res://scenes/snowman.tscn" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://colt1wcbh05xx" path="res://scenes/flower.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://cavboor0v3h27" path="res://scenes/gem_indicator.tscn" id="8_ca42v"]
+[ext_resource type="PackedScene" uid="uid://3sn446dk7gpc" path="res://scenes/snow_pile.tscn" id="9_rysoc"]
 [ext_resource type="PackedScene" uid="uid://b2nwmnujtsats" path="res://scenes/macguffin.tscn" id="10_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://brsw35h7doxjk" path="res://scenes/score.tscn" id="10_vtaks"]
 [ext_resource type="PackedScene" uid="uid://7mpdft6otq21" path="res://scenes/dude_in_distress.tscn" id="11_dinhu"]
@@ -14,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cfomb8c2y7xbr" path="res://scenes/waterfall.tscn" id="12_dinhu"]
 [ext_resource type="PackedScene" uid="uid://b2haeh0vpbkww" path="res://scenes/sky.tscn" id="13_kvuet"]
 [ext_resource type="PackedScene" uid="uid://b01ysjg4xwbrd" path="res://scenes/blueSky.tscn" id="14_trtic"]
-[ext_resource type="PackedScene" path="res://scenes/iceSpikes.tscn" id="15_ir15t"]
+[ext_resource type="PackedScene" uid="uid://p4yhwp4qtcwy" path="res://scenes/iceSpikes.tscn" id="15_ir15t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
 texture = ExtResource("3_vtaks")
@@ -235,12 +237,15 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-theme_override_constants/separation = 60
+theme_override_constants/separation = 91
 
 [node name="Score" parent="HUD/Control/VBoxContainer" unique_id=1416161994 instance=ExtResource("10_vtaks")]
 layout_mode = 2
 
 [node name="Season_controller" parent="HUD/Control/VBoxContainer" unique_id=2054882766 instance=ExtResource("11_kvpfn")]
+layout_mode = 2
+
+[node name="gem_indicator" parent="HUD/Control/VBoxContainer" unique_id=1487677988 instance=ExtResource("8_ca42v")]
 layout_mode = 2
 
 [node name="Flower" parent="." unique_id=516543460 instance=ExtResource("7_u5sy4")]
@@ -300,8 +305,14 @@ position = Vector2(128, 64)
 scale = Vector2(2.288371, 1.3417726)
 scroll_offset = Vector2(575.00006, 325)
 
-[node name="IceSpikes" parent="." unique_id=1627656771 instance=ExtResource("15_ir15t")]
+[node name="IceSpikes" parent="." unique_id=942705289 instance=ExtResource("15_ir15t")]
 position = Vector2(-16, 48)
+
+[node name="snow_pile" parent="." unique_id=1627656771 instance=ExtResource("9_rysoc")]
+position = Vector2(107, -13)
+
+[node name="snow_pile2" parent="." unique_id=1598099395 instance=ExtResource("9_rysoc")]
+position = Vector2(99, 44)
 
 [connection signal="spring" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_spring"]
 [connection signal="winter" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_winter"]

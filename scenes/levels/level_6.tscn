@@ -5,8 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://cayewvh386mlo" path="res://scenes/player.tscn" id="3_m5qie"]
 [ext_resource type="PackedScene" uid="uid://b2haeh0vpbkww" path="res://scenes/sky.tscn" id="4_kydov"]
 [ext_resource type="PackedScene" uid="uid://cdsksi2n4eyfj" path="res://scenes/killzone.tscn" id="5_uwlxl"]
-[ext_resource type="PackedScene" path="res://scenes/score.tscn" id="6_4wfvb"]
+[ext_resource type="PackedScene" uid="uid://brsw35h7doxjk" path="res://scenes/score.tscn" id="6_4wfvb"]
 [ext_resource type="PackedScene" uid="uid://dqmtby6fooixc" path="res://scenes/season_controller.tscn" id="7_tqv5a"]
+[ext_resource type="PackedScene" uid="uid://cavboor0v3h27" path="res://scenes/gem_indicator.tscn" id="8_e18e5"]
 [ext_resource type="PackedScene" uid="uid://b01ysjg4xwbrd" path="res://scenes/blueSky.tscn" id="8_ppjov"]
 [ext_resource type="PackedScene" uid="uid://7mpdft6otq21" path="res://scenes/dude_in_distress.tscn" id="9_e18e5"]
 [ext_resource type="PackedScene" uid="uid://cfomb8c2y7xbr" path="res://scenes/waterfall.tscn" id="10_m5qie"]
@@ -73,6 +74,9 @@ theme_override_constants/separation = 60
 layout_mode = 2
 
 [node name="Season_controller" parent="HUD/Control/VBoxContainer" unique_id=2054882766 instance=ExtResource("7_tqv5a")]
+layout_mode = 2
+
+[node name="gem_indicator" parent="HUD/Control/VBoxContainer" unique_id=1105795014 instance=ExtResource("8_e18e5")]
 layout_mode = 2
 
 [node name="BlueSky" parent="." unique_id=2020679628 instance=ExtResource("8_ppjov")]

@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://dace6iugog45x"]
 
 [ext_resource type="PackedScene" uid="uid://cgphpsr53so7u" path="res://scenes/game_manager.tscn" id="1_pil2j"]
-[ext_resource type="PackedScene" uid="uid://bjl6gx66ififc" path="res://scenes/map_layers.tscn" id="2_cm1v6"]
+[ext_resource type="PackedScene" uid="uid://bhckluo7277nc" path="res://scenes/map_layers.tscn" id="2_cm1v6"]
 [ext_resource type="PackedScene" uid="uid://cayewvh386mlo" path="res://scenes/player.tscn" id="3_psh0x"]
 [ext_resource type="PackedScene" uid="uid://cdsksi2n4eyfj" path="res://scenes/killzone.tscn" id="4_ac0cw"]
 [ext_resource type="PackedScene" uid="uid://b2haeh0vpbkww" path="res://scenes/sky.tscn" id="4_wrnl3"]
 [ext_resource type="PackedScene" uid="uid://brsw35h7doxjk" path="res://scenes/score.tscn" id="5_wbr6d"]
 [ext_resource type="PackedScene" uid="uid://dqmtby6fooixc" path="res://scenes/season_controller.tscn" id="6_2uuj8"]
+[ext_resource type="PackedScene" uid="uid://cavboor0v3h27" path="res://scenes/gem_indicator.tscn" id="8_oem7y"]
 [ext_resource type="PackedScene" uid="uid://b01ysjg4xwbrd" path="res://scenes/blueSky.tscn" id="8_tcqsn"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
@@ -68,6 +69,9 @@ theme_override_constants/separation = 60
 layout_mode = 2
 
 [node name="Season_controller" parent="HUD/Control/VBoxContainer" unique_id=2054882766 instance=ExtResource("6_2uuj8")]
+layout_mode = 2
+
+[node name="gem_indicator" parent="HUD/Control/VBoxContainer" unique_id=850160028 instance=ExtResource("8_oem7y")]
 layout_mode = 2
 
 [node name="BlueSky" parent="." unique_id=2020679628 instance=ExtResource("8_tcqsn")]
