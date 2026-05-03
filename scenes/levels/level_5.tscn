@@ -238,6 +238,6 @@ position = Vector2(1247, -368)
 position = Vector2(1225, -330)
 
 [node name="macguffin" parent="." unique_id=340897352 instance=ExtResource("14_0y7y4")]
-position = Vector2(1266, 61)
+position = Vector2(1260, 85)
 
 [editable path="map_layers"]
