@@ -7,13 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://cdsksi2n4eyfj" path="res://scenes/killzone.tscn" id="5_iav0o"]
 [ext_resource type="PackedScene" path="res://scenes/score.tscn" id="6_dnkej"]
 [ext_resource type="PackedScene" uid="uid://dqmtby6fooixc" path="res://scenes/season_controller.tscn" id="7_mm8aj"]
-[ext_resource type="PackedScene" path="res://scenes/gem_indicator.tscn" id="8_mm8aj"]
+[ext_resource type="PackedScene" uid="uid://cavboor0v3h27" path="res://scenes/gem_indicator.tscn" id="8_mm8aj"]
 [ext_resource type="PackedScene" uid="uid://b01ysjg4xwbrd" path="res://scenes/blueSky.tscn" id="8_wtwp4"]
 [ext_resource type="PackedScene" uid="uid://bc264htw0afth" path="res://scenes/coin.tscn" id="9_dga24"]
 [ext_resource type="PackedScene" uid="uid://7mpdft6otq21" path="res://scenes/dude_in_distress.tscn" id="9_qxy0u"]
 [ext_resource type="PackedScene" uid="uid://cfomb8c2y7xbr" path="res://scenes/waterfall.tscn" id="10_excbq"]
 [ext_resource type="PackedScene" uid="uid://b2nwmnujtsats" path="res://scenes/macguffin.tscn" id="11_dnkej"]
 [ext_resource type="FontFile" uid="uid://oa86o88dekdm" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="12_iav0o"]
+[ext_resource type="PackedScene" uid="uid://3sn446dk7gpc" path="res://scenes/snow_pile.tscn" id="15_wtwp4"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
 distance = -2.0
@@ -98,7 +99,7 @@ position = Vector2(656, 0)
 position = Vector2(688, 0)
 
 [node name="macguffin" parent="." unique_id=1728568913 instance=ExtResource("11_dnkej")]
-position = Vector2(1553, -138)
+position = Vector2(1553, -135)
 
 [node name="coins" type="Node" parent="." unique_id=65055093]
 
@@ -121,6 +122,9 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.6666667)
 theme_override_fonts/font = ExtResource("12_iav0o")
 theme_override_font_sizes/font_size = 13
 text = "Press E to switch seasons!"
+
+[node name="snow_pile" parent="." unique_id=1627656771 instance=ExtResource("15_wtwp4")]
+position = Vector2(1552, -144)
 
 [connection signal="spring" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_spring"]
 [connection signal="winter" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_winter"]
