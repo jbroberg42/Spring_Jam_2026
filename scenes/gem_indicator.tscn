@@ -102,4 +102,4 @@ script = ExtResource("1_ycxy7")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1106516240]
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_kyh82")
-animation = &"blue"
+animation = &"silver"

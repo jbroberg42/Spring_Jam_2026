@@ -6,13 +6,24 @@ var time_taken: int = 0
 var is_winter: bool = false
 
 const ABILITY_COOLDOWN: int = 1
+
+const LEVEL_COLORS: Array[String] = [
+	"ruby",
+	"topaz",
+	"emerald",
+	"blue",
+	"indigo",
+	"pink",
+	"silver"
+]
+
 var ability_ready: bool = true
 
 var have_macguffin: bool = false
 
-var level_list: Array[String] = [
-	"res://scenes/game.tscn",
-	"res://scenes/level0.tscn"
+const LEVEL_LIST: Array[String] = [
+	"res://scenes/levels/level_1.tscn",
+	"res://scenes/levels/level2.tscn"
 	]
 	
 func reset_level():

@@ -1,23 +1,12 @@
 extends Control
 
-@onready var game_manager: Node = %GameManager
+var colors: Array[String] = GameState.LEVEL_COLORS
 
-func _on_ready():
-	$Label.text = ""
-
-
-func _on_game_manager_spring() -> void:
-	$AnimatedSprite2D.play("spring")
-	cooldown_label()
-func _on_game_manager_winter() -> void:
-	$AnimatedSprite2D.play("winter")
-	cooldown_label()
+func _process(delta: float) -> void:
+	if GameState.have_macguffin:
+		$AnimatedSprite2D.play(colors[GameState.level])
+		$AnimatedSprite2D.show()
+	#else:
+		#$AnimatedSprite2D.hide()
 	
-func cooldown_label():
-	var a = GameState.ABILITY_COOLDOWN
-	for i in a:
-		$Label.text = str(a)
-		a -= 1
-		await get_tree().create_timer(1).timeout
-	$Label.text = ""
 	
