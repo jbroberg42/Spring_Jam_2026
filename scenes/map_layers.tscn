@@ -2,8 +2,21 @@
 
 [ext_resource type="Texture2D" uid="uid://cbmanyuxq5gg0" path="res://assets/sprites/WinterTileSet.png" id="1_21cy3"]
 [ext_resource type="Script" uid="uid://bpn65pqnex3op" path="res://scripts/map_layers.gd" id="1_pq3wk"]
+[ext_resource type="Texture2D" uid="uid://6y2l2e0q1ul7" path="res://assets/sprites/waterfallFreezingalltogether.png" id="2_f1ojr"]
 [ext_resource type="Texture2D" uid="uid://dkby3rum8x4ap" path="res://assets/sprites/SpringTileSet.png" id="2_pq3wk"]
 [ext_resource type="Texture2D" uid="uid://dg66j340s45u4" path="res://assets/sprites/Waterfall.png" id="4_ematx"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fog5b"]
+texture = ExtResource("2_f1ojr")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b2cu3"]
 texture = ExtResource("1_21cy3")
@@ -109,6 +122,7 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_b2cu3")
 sources/3 = SubResource("TileSetAtlasSource_2hll8")
 sources/5 = SubResource("TileSetAtlasSource_f1ojr")
+sources/0 = SubResource("TileSetAtlasSource_fog5b")
 
 [node name="map_layers" type="Node2D" unique_id=906720902]
 script = ExtResource("1_pq3wk")
