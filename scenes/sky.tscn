@@ -7,13 +7,13 @@
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.6966307, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_k1tqj"]
+[sub_resource type="CurveTexture" id="CurveTexture_qk45w"]
 curve = SubResource("Curve_2gxki")
 
 [sub_resource type="Gradient" id="Gradient_qk45w"]
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_3hy4n"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_v26od"]
 gradient = SubResource("Gradient_qk45w")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2gxki"]
@@ -22,11 +22,24 @@ emission_shape = 3
 emission_box_extents = Vector3(500, 1, 1)
 gravity = Vector3(-45, 98, 0)
 scale_max = 4.0
-color_initial_ramp = SubResource("GradientTexture1D_3hy4n")
-alpha_curve = SubResource("CurveTexture_k1tqj")
+color_initial_ramp = SubResource("GradientTexture1D_v26od")
+alpha_curve = SubResource("CurveTexture_qk45w")
 turbulence_enabled = true
 turbulence_influence_min = 0.032
 turbulence_influence_max = 0.126
+
+[sub_resource type="Curve" id="Curve_uel4y"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.6966307, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_k1tqj"]
+curve = SubResource("Curve_uel4y")
+
+[sub_resource type="Gradient" id="Gradient_6joac"]
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3hy4n"]
+gradient = SubResource("Gradient_6joac")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_k1tqj"]
 particle_flag_disable_z = true
