@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://bmipyi4i4p3b4"]
+
+[ext_resource type="Texture2D" uid="uid://dhfjjca0bjjmr" path="res://assets/sprites/Flower petal.png" id="1_n5qyp"]
+
+[sub_resource type="Gradient" id="Gradient_u5sy4"]
+offsets = PackedFloat32Array(0, 0.18992248, 1)
+colors = PackedColorArray(0.0010427046, 0.2865209, 0.9486757, 1, 0, 0.46601117, 0.9458347, 1, 0.6012984, 0.8632337, 0.99999994, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v26od"]
+gradient = SubResource("Gradient_u5sy4")
+width = 512
+height = 512
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Curve" id="Curve_vsw8r"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.6966307, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_k1tqj"]
+curve = SubResource("Curve_vsw8r")
+
+[sub_resource type="Gradient" id="Gradient_km7eu"]
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3hy4n"]
+gradient = SubResource("Gradient_km7eu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vsw8r"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(100, 1, 1)
+gravity = Vector3(-45, 98, 0)
+scale_max = 4.0
+color_initial_ramp = SubResource("GradientTexture1D_3hy4n")
+alpha_curve = SubResource("CurveTexture_k1tqj")
+turbulence_enabled = true
+turbulence_influence_min = 0.032
+turbulence_influence_max = 0.126
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5a6dn"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(100, 1, 1)
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = 194.58998
+gravity = Vector3(-10, 98, 0)
+scale_min = 0.5
+color_initial_ramp = SubResource("GradientTexture1D_3hy4n")
+alpha_curve = SubResource("CurveTexture_k1tqj")
+turbulence_enabled = true
+turbulence_influence_min = 0.032
+turbulence_influence_max = 0.11800001
+
+[node name="win_screen" type="Node" unique_id=859340806]
+
+[node name="Sky" type="Sprite2D" parent="." unique_id=1169360015]
+position = Vector2(576, 324)
+scale = Vector2(2.302527, 1.3416358)
+texture = SubResource("GradientTexture2D_v26od")
+
+[node name="Snow" type="GPUParticles2D" parent="Sky" unique_id=1686797525]
+position = Vector2(492.99997, -269)
+scale = Vector2(4.1875, 4.1874995)
+amount = 100
+lifetime = 10.0
+preprocess = 30.0
+process_material = SubResource("ParticleProcessMaterial_vsw8r")
+
+[node name="Petals" type="GPUParticles2D" parent="Sky" unique_id=616777844]
+position = Vector2(-406.99997, -265.00003)
+scale = Vector2(4.1875, 4.1874995)
+amount = 200
+texture = ExtResource("1_n5qyp")
+lifetime = 10.0
+preprocess = 30.0
+process_material = SubResource("ParticleProcessMaterial_5a6dn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1959367202]
