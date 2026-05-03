@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dbarysm8egy83" path="res://scenes/selection_gem_restart.tscn" id="13_li764"]
 [ext_resource type="PackedScene" uid="uid://bsj2l3p21q5t5" path="res://scenes/selection_gem_quit.tscn" id="13_lnyp3"]
 [ext_resource type="Script" uid="uid://im7jtbheh658" path="res://scripts/selection_gem_restart.gd" id="14_3og8d"]
+[ext_resource type="AudioStream" uid="uid://5r61rnucqig2" path="res://assets/sounds/Ice-Road-Sunrise.mp3" id="16_d8gdx"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
 distance = -2.0
@@ -113,6 +114,10 @@ position = Vector2(208, 9)
 
 [node name="AnimatedSprite2D" parent="selection_gem_quit" index="1" unique_id=849245326]
 animation = &"ruby"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=568985010]
+stream = ExtResource("16_d8gdx")
+autoplay = true
 
 [connection signal="spring" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_spring"]
 [connection signal="winter" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_winter"]

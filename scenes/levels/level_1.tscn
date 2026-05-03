@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cfomb8c2y7xbr" path="res://scenes/waterfall.tscn" id="10_excbq"]
 [ext_resource type="PackedScene" uid="uid://b2nwmnujtsats" path="res://scenes/macguffin.tscn" id="11_dnkej"]
 [ext_resource type="FontFile" uid="uid://oa86o88dekdm" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="12_iav0o"]
+[ext_resource type="AudioStream" uid="uid://5r61rnucqig2" path="res://assets/sounds/Ice-Road-Sunrise.mp3" id="14_mm8aj"]
 [ext_resource type="PackedScene" uid="uid://3sn446dk7gpc" path="res://scenes/snow_pile.tscn" id="15_wtwp4"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
@@ -141,6 +142,10 @@ autowrap_mode = 2
 
 [node name="snow_pile" parent="." unique_id=1627656771 instance=ExtResource("15_wtwp4")]
 position = Vector2(1552, -144)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1133839709]
+stream = ExtResource("14_mm8aj")
+autoplay = true
 
 [editable path="map_layers"]
 [editable path="HUD"]

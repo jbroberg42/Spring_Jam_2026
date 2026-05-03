@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://jl3y1xkqnqa5" path="res://assets/sprites/quit.png" id="5_5a6dn"]
 [ext_resource type="Script" uid="uid://dqg2hlqejvh2g" path="res://scripts/start_button.gd" id="5_crctu"]
 [ext_resource type="Script" uid="uid://dxy3skc7gj3in" path="res://scripts/quit_button.gd" id="6_crctu"]
+[ext_resource type="AudioStream" uid="uid://5r61rnucqig2" path="res://assets/sounds/Ice-Road-Sunrise.mp3" id="8_sn5u3"]
 
 [sub_resource type="Gradient" id="Gradient_u5sy4"]
 offsets = PackedFloat32Array(0, 0.18992248, 1)
@@ -161,6 +162,10 @@ z_index = 1
 position = Vector2(3.9191017, 4.561653)
 scale = Vector2(0.2640893, 0.7598804)
 texture = ExtResource("5_5a6dn")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=430317650]
+stream = ExtResource("8_sn5u3")
+autoplay = true
 
 [connection signal="pressed" from="start_button" to="start_button" method="_on_pressed"]
 [connection signal="pressed" from="quit_button" to="quit_button" method="_on_pressed"]

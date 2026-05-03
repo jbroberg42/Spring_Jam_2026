@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cdla4ro8ecejr" path="res://scenes/snowman.tscn" id="11_kydov"]
 [ext_resource type="PackedScene" uid="uid://p4yhwp4qtcwy" path="res://scenes/iceSpikes.tscn" id="12_uwlxl"]
 [ext_resource type="PackedScene" uid="uid://colt1wcbh05xx" path="res://scenes/flower.tscn" id="13_4wfvb"]
+[ext_resource type="AudioStream" uid="uid://5r61rnucqig2" path="res://assets/sounds/Ice-Road-Sunrise.mp3" id="15_gf2l7"]
 [ext_resource type="PackedScene" uid="uid://bc264htw0afth" path="res://scenes/coin.tscn" id="15_pafwe"]
 [ext_resource type="PackedScene" uid="uid://b2nwmnujtsats" path="res://scenes/macguffin.tscn" id="15_ppjov"]
 
@@ -219,6 +220,10 @@ position = Vector2(1713, -43)
 [node name="AnimatedSprite2D" parent="macguffin" index="1" unique_id=849245326]
 animation = &"pink"
 autoplay = "pink"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=855918821]
+stream = ExtResource("15_gf2l7")
+autoplay = true
 
 [editable path="map_layers"]
 [editable path="macguffin"]
