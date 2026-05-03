@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://bk5kjhu5jih5s"]
+[gd_scene format=3 uid="uid://p4yhwp4qtcwy"]
 
-[ext_resource type="Script" uid="uid://bprdhaf3cohth" path="res://scripts/ice_spikes.gd" id="1_52uhe"]
+[ext_resource type="Script" path="res://scripts/ice_spikes.gd" id="1_52uhe"]
 [ext_resource type="Texture2D" uid="uid://c5pn3spyhvhij" path="res://assets/sprites/IceSpikes.png" id="1_iy2po"]
 [ext_resource type="PackedScene" uid="uid://cdsksi2n4eyfj" path="res://scenes/killzone.tscn" id="2_52uhe"]
 
@@ -130,7 +130,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13qay"]
 size = Vector2(32, 22)
 
-[node name="Node2D" type="Node2D" unique_id=1627656771]
+[node name="IceSpikes" type="Node2D" unique_id=1627656771]
 script = ExtResource("1_52uhe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=75130975]
