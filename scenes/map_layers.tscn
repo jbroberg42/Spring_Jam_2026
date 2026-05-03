@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bjl6gx66ififc"]
+[gd_scene format=3 uid="uid://bhckluo7277nc"]
 
 [ext_resource type="Texture2D" uid="uid://cbmanyuxq5gg0" path="res://assets/sprites/WinterTileSet.png" id="1_21cy3"]
 [ext_resource type="Script" uid="uid://bpn65pqnex3op" path="res://scripts/map_layers.gd" id="1_pq3wk"]
@@ -93,14 +93,14 @@ texture_region_size = Vector2i(32, 32)
 texture = ExtResource("4_ematx")
 texture_region_size = Vector2i(32, 32)
 1:1/animation_separation = Vector2i(2, 0)
-1:1/animation_frame_0/duration = 0.3
-1:1/animation_frame_1/duration = 0.3
-1:1/animation_frame_2/duration = 0.3
+1:1/animation_frame_0/duration = 0.1
+1:1/animation_frame_1/duration = 0.1
+1:1/animation_frame_2/duration = 0.1
 1:1/0 = 0
 1:0/animation_separation = Vector2i(2, 0)
-1:0/animation_frame_0/duration = 0.3
-1:0/animation_frame_1/duration = 0.3
-1:0/animation_frame_2/duration = 0.3
+1:0/animation_frame_0/duration = 0.1
+1:0/animation_frame_1/duration = 0.1
+1:0/animation_frame_2/duration = 0.1
 1:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_o6pqg"]
