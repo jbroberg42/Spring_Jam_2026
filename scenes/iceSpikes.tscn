@@ -136,7 +136,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13qay"]
-size = Vector2(32, 22)
+size = Vector2(28, 19)
 
 [node name="IceSpikes" type="Node2D" unique_id=1627656771]
 script = ExtResource("1_52uhe")
@@ -149,7 +149,7 @@ autoplay = "default"
 [node name="killzone" parent="." unique_id=300587 instance=ExtResource("2_52uhe")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=826848892]
-position = Vector2(0, 5)
+position = Vector2(0, 6.5)
 shape = SubResource("RectangleShape2D_13qay")
 
 [node name="Timer" type="Timer" parent="." unique_id=324429055]
