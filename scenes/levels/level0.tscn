@@ -74,6 +74,10 @@ layout_mode = 2
 scale = Vector2(2.5236473, 1.3322281)
 scroll_offset = Vector2(583.00006, 317)
 
+[node name="mobs" type="Node" parent="." unique_id=684075897]
+
+[node name="coins" type="Node" parent="." unique_id=1125279758]
+
 [connection signal="spring" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_spring"]
 [connection signal="winter" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_winter"]
 
