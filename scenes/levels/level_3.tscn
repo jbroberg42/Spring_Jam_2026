@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bc264htw0afth" path="res://scenes/coin.tscn" id="12_f6egh"]
 [ext_resource type="PackedScene" uid="uid://b2nwmnujtsats" path="res://scenes/macguffin.tscn" id="12_qi5uv"]
 [ext_resource type="AudioStream" uid="uid://5r61rnucqig2" path="res://assets/sounds/Ice-Road-Sunrise.mp3" id="13_f6egh"]
+[ext_resource type="PackedScene" uid="uid://3sn446dk7gpc" path="res://scenes/snow_pile.tscn" id="14_t4txi"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
 distance = -2.0
@@ -126,6 +127,9 @@ autoplay = "emerald"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1921208196]
 stream = ExtResource("13_f6egh")
 autoplay = true
+
+[node name="snow_pile" parent="." unique_id=1627656771 instance=ExtResource("14_t4txi")]
+position = Vector2(1393, -208)
 
 [connection signal="spring" from="GameManager" to="mobs/waterfall" method="_on_game_manager_spring"]
 [connection signal="winter" from="GameManager" to="mobs/waterfall" method="_on_game_manager_winter"]

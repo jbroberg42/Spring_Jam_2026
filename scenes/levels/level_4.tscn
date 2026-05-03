@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b2nwmnujtsats" path="res://scenes/macguffin.tscn" id="13_hsvsk"]
 [ext_resource type="PackedScene" uid="uid://bc264htw0afth" path="res://scenes/coin.tscn" id="14_fcb7b"]
 [ext_resource type="AudioStream" uid="uid://5r61rnucqig2" path="res://assets/sounds/Ice-Road-Sunrise.mp3" id="14_ov8fk"]
+[ext_resource type="PackedScene" uid="uid://3sn446dk7gpc" path="res://scenes/snow_pile.tscn" id="15_ov8fk"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
 distance = -2.0
@@ -138,6 +139,9 @@ position = Vector2(862, -17)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2071994585]
 stream = ExtResource("14_ov8fk")
 autoplay = true
+
+[node name="snow_pile" parent="." unique_id=1627656771 instance=ExtResource("15_ov8fk")]
+position = Vector2(944, -16)
 
 [editable path="map_layers"]
 [editable path="macguffin"]
