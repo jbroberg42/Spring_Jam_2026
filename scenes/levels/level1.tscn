@@ -1,0 +1,76 @@
+[gd_scene format=4 uid="uid://crr2rf3r670ve"]
+
+[ext_resource type="PackedScene" uid="uid://cgphpsr53so7u" path="res://scenes/game_manager.tscn" id="1_ejswk"]
+[ext_resource type="PackedScene" uid="uid://bjl6gx66ififc" path="res://scenes/map_layers.tscn" id="2_bbk5w"]
+[ext_resource type="PackedScene" uid="uid://cayewvh386mlo" path="res://scenes/player.tscn" id="3_conm7"]
+[ext_resource type="PackedScene" uid="uid://cdsksi2n4eyfj" path="res://scenes/killzone.tscn" id="4_d3jkd"]
+[ext_resource type="PackedScene" uid="uid://brsw35h7doxjk" path="res://scenes/score.tscn" id="5_u3awl"]
+[ext_resource type="PackedScene" uid="uid://dqmtby6fooixc" path="res://scenes/season_controller.tscn" id="6_2ku1j"]
+[ext_resource type="PackedScene" uid="uid://cdla4ro8ecejr" path="res://scenes/snowman.tscn" id="7_f31uk"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
+distance = -2.0
+
+[node name="level0" type="Node2D" unique_id=874965567]
+
+[node name="GameManager" parent="." unique_id=1990519776 instance=ExtResource("1_ejswk")]
+unique_name_in_owner = true
+
+[node name="map_layers" parent="." unique_id=906720902 instance=ExtResource("2_bbk5w")]
+
+[node name="winter_layer" parent="map_layers" index="0" unique_id=608528123]
+tile_map_data = PackedByteArray("AAD+/wEAAQAWAA4AAAD//wEAAQAWAA4AAAAAAAEAAQAWAA4AAAABAAEAAQAWAA4AAAACAAEAAQAWAA4AAAACAAAAAQAWAA0AAAABAP//AQAVAAgAAAACAP//AQAWAAgAAAA=")
+
+[node name="spring_layer" parent="map_layers" index="1" unique_id=698821074]
+tile_map_data = PackedByteArray("AAD+/wEAAwAWAA4AAAD//wEAAwAWAA4AAAAAAAEAAwAWAA4AAAABAAEAAwAWAA4AAAACAAEAAwAWAA4AAAACAAAAAwAWAA0AAAACAP//AwAWAAgAAAABAP//AwAVAAgAAAA=")
+
+[node name="Player" parent="." unique_id=1867319898 instance=ExtResource("3_conm7")]
+position = Vector2(24, -7)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=220398274]
+position = Vector2(0, -5)
+zoom = Vector2(4, 4)
+limit_left = -9999946
+limit_top = -9999998
+limit_right = 10000054
+limit_bottom = 122
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="killzone" parent="." unique_id=300587 instance=ExtResource("4_d3jkd")]
+position = Vector2(23, 59)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=259522311]
+position = Vector2(165, 40)
+shape = SubResource("WorldBoundaryShape2D_p57ef")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1081156825]
+
+[node name="Control" type="Control" parent="HUD" unique_id=918203041]
+layout_mode = 3
+anchor_left = 0.05
+anchor_top = 0.1
+anchor_right = 0.068
+anchor_bottom = 0.107
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Control" unique_id=1374680731]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 60
+
+[node name="Score" parent="HUD/Control/VBoxContainer" unique_id=1416161994 instance=ExtResource("5_u3awl")]
+layout_mode = 2
+
+[node name="Season_controller" parent="HUD/Control/VBoxContainer" unique_id=2054882766 instance=ExtResource("6_2ku1j")]
+layout_mode = 2
+
+[node name="Snowman" parent="." unique_id=1341636080 instance=ExtResource("7_f31uk")]
+position = Vector2(-51, 26)
+
+[connection signal="spring" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_spring"]
+[connection signal="winter" from="GameManager" to="HUD/Control/VBoxContainer/Season_controller" method="_on_game_manager_winter"]
+
+[editable path="map_layers"]
