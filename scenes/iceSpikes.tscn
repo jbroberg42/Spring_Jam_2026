@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://bk5kjhu5jih5s"]
+
+[ext_resource type="Script" uid="uid://bprdhaf3cohth" path="res://scripts/ice_spikes.gd" id="1_52uhe"]
+[ext_resource type="Texture2D" uid="uid://c5pn3spyhvhij" path="res://assets/sprites/IceSpikes.png" id="1_iy2po"]
+[ext_resource type="PackedScene" uid="uid://cdsksi2n4eyfj" path="res://scenes/killzone.tscn" id="2_52uhe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uae2m"]
+atlas = ExtResource("1_iy2po")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uw7j3"]
+atlas = ExtResource("1_iy2po")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_js586"]
+atlas = ExtResource("1_iy2po")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8gqx"]
+atlas = ExtResource("1_iy2po")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rk1vm"]
+atlas = ExtResource("1_iy2po")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixkok"]
+atlas = ExtResource("1_iy2po")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3q1b2"]
+atlas = ExtResource("1_iy2po")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gol2o"]
+atlas = ExtResource("1_iy2po")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_url8w"]
+atlas = ExtResource("1_iy2po")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skk7g"]
+atlas = ExtResource("1_iy2po")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8u81"]
+atlas = ExtResource("1_iy2po")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccufa"]
+atlas = ExtResource("1_iy2po")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdnb3"]
+atlas = ExtResource("1_iy2po")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4eycq"]
+atlas = ExtResource("1_iy2po")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gj5mc"]
+atlas = ExtResource("1_iy2po")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_30q5p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uae2m")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uw7j3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_js586")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8gqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rk1vm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixkok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3q1b2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gol2o")
+}],
+"loop": false,
+"name": &"freeze",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_url8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skk7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8u81")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccufa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdnb3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4eycq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gj5mc")
+}],
+"loop": false,
+"name": &"melt",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13qay"]
+size = Vector2(32, 22)
+
+[node name="Node2D" type="Node2D" unique_id=1627656771]
+script = ExtResource("1_52uhe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=75130975]
+sprite_frames = SubResource("SpriteFrames_30q5p")
+animation = &"melt"
+autoplay = "default"
+
+[node name="killzone" parent="." unique_id=300587 instance=ExtResource("2_52uhe")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=826848892]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_13qay")
+
+[node name="Timer" type="Timer" parent="." unique_id=324429055]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
